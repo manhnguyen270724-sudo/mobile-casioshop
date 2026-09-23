@@ -7,20 +7,45 @@ import '@/global.css';
 
 import { Platform } from 'react-native';
 
+export const CasioColors = {
+  primary: '#0b1f33',
+  primaryLight: '#183452',
+  accent: '#f5c451',
+  accentDark: '#b07b12',
+  accentLight: '#fff8e6',
+  crimson: '#c23b28',
+  crimsonLight: '#fdeeed',
+  background: '#f4f1eb',
+  surface: '#ffffff',
+  surfaceCard: '#ffffff',
+  border: '#e4dfd5',
+  borderLight: '#eeeae1',
+  text: '#162536',
+  textSecondary: '#6a737d',
+  textMuted: '#9aa0a6',
+  white: '#ffffff',
+  success: '#10b981',
+  warning: '#f59e0b',
+} as const;
+
 export const Colors = {
   light: {
-    text: '#000000',
-    background: '#ffffff',
-    backgroundElement: '#F0F0F3',
-    backgroundSelected: '#E0E1E6',
-    textSecondary: '#60646C',
+    text: '#162536',
+    background: '#f4f1eb',
+    backgroundElement: '#ffffff',
+    backgroundSelected: '#e8e3d8',
+    textSecondary: '#6a737d',
+    primary: '#0b1f33',
+    accent: '#f5c451',
   },
   dark: {
     text: '#ffffff',
-    background: '#000000',
-    backgroundElement: '#212225',
-    backgroundSelected: '#2E3135',
-    textSecondary: '#B0B4BA',
+    background: '#0b1f33',
+    backgroundElement: '#183452',
+    backgroundSelected: '#204066',
+    textSecondary: '#a0aec0',
+    primary: '#f5c451',
+    accent: '#f5c451',
   },
 } as const;
 

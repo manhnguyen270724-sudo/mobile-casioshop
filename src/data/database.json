@@ -1,0 +1,197 @@
+{
+  "Product": [
+{   
+    "brand":"G-Shock",
+    "name": "Đồng Hồ Bonest Gatti 47mm Nam BG5606-A2",
+    "img": "https://www.watchstore.vn/wp-content/uploads/2023/11/bg5606-a2-1-917313870-1440319181-1712669090-768x768.jpg",
+    "price": "6.197.500₫",
+    "id": "M1"
+  },
+  {
+    "brand":"G-Shock",
+    "name": "Đồng Hồ Bonest Gatti 45mm Nam BG4001-R2",
+    "img": "https://www.watchstore.vn/wp-content/uploads/2023/12/bg5804-a2-1-750261156-1218272464-1712669786-768x768.jpg",
+    "price": "6.448.750₫",
+    "id": "M2"
+  },
+  {
+    "brand":"G-Shock",
+    "name": "Đồng Hồ Casio 51mm Nam GA-110GB-1ADR",
+    "img": "https://www.watchstore.vn/wp-content/uploads/2020/11/ga-110gb-1adr-1995959558-852531344-1712563990-768x768.jpg",
+    "price": "4.066.400₫",
+    "id": "M3"
+  },
+  {
+    "brand":"G-Shock",
+    "name": "Đồng Hồ Casio 45mm Nam MTP-VD01L-1EVUDF",
+    "img": "https://www.watchstore.vn/wp-content/uploads/2021/05/1-khung-sp-1274501040-1790641903-1712568185-768x768.jpg",
+    "price": "945.600₫",
+    "id": "M4"
+  },
+  {
+    "brand":"Citizen",
+    "name": "Đồng Hồ Olym Pianus 42mm Nam OP990-45.24ADGK-GL-D",
+    "img": "https://www.watchstore.vn/wp-content/uploads/2022/09/op990-45.24adgk-gl-d-1712726130-768x768.jpg",
+    "price": "7.410.000₫",
+    "id": "M5"
+  },
+  {
+    "brand":"Seiko",
+    "name": "Đồng Hồ Bentley 42mm Nam BL2215-25MWWB-D",
+    "img": "https://www.watchstore.vn/wp-content/uploads/2023/08/bl2215-25mwwb-d-1-83794753-385047346-1712665485-768x768.jpg",
+    "price": "8.510.000₫",
+    "id": "M6"
+  },
+  {
+    "brand":"Vintage",
+    "name": "Đồng Hồ SRWatch 40mm Nam SG7004.1101GM",
+    "img": "https://www.watchstore.vn/wp-content/uploads/2023/11/sg70041101gm-1-1655623959-1088545011-1712669159-768x768.jpg",
+    "price": "3.105.000₫",
+    "id": "M7"
+  },
+  {
+    "brand":"Vintage",
+    "name": "Đồng Hồ Citizen 43mm Nam AN3600-59L",
+    "img": "https://www.watchstore.vn/wp-content/uploads/2020/11/an3600-59l-1712563825-768x768.jpg",
+    "price": "4.320.000₫",
+    "id": "M8"
+  },
+  {
+    "brand":"Citizen",
+    "name": "Đồng Hồ Bonest Gatti 42mm Nam BG6003-A3",
+    "img": "https://www.watchstore.vn/wp-content/uploads/2023/12/bg5806-a3-1-1876520846-1933878820-1712670101-768x768.jpg",
+    "price": "7.537.500₫",
+    "id": "M9"
+  },
+  {
+    "brand":"Omega",
+    "name": "Đồng Hồ Bonest Gatti 46mm Nam BG5501-A4",
+    "img": "https://www.watchstore.vn/wp-content/uploads/2023/11/bg5501-a4-1-1977979114-1746612935-1712668784-768x768.jpg",
+    "price": "5.527.500₫",
+    "id": "M10"
+  },
+    {
+      "brand":"Omega",
+      "name": "Bulova 32mm Nữ 96L273967867",
+      "img": "https://www.watchstore.vn/wp-content/uploads/2022/03/96l273-1712581838-400x400.jpg",
+      "price": "10.612.250 ₫",
+      "id": "Fm11"
+    },
+    {
+      "brand":"Citizen",
+      "name": "Bulova 22mm Nữ 96X136673",
+      "img": "https://www.watchstore.vn/wp-content/uploads/2022/11/96x136-1-1700752665-100333105-1712589188-400x400.jpg",
+      "price": "4.250.000 ₫",
+      "id": "Fm12"
+    },
+    {
+      "brand":"Omega",
+      "name": "Freelook 34mm Nữ FL.1.10049.1",
+      "img": "https://www.watchstore.vn/wp-content/uploads/2021/11/fl-661303999-1468444074-1712574475-400x400.jpg",
+      "price": "1.507.500 ₫",
+      "id": "Fm13"
+    },
+    {
+      "brand":"Omega",
+      "name": "Ogival 34mm Nữ OG380-451DLW",
+      "img": "https://www.watchstore.vn/wp-content/uploads/2022/06/380-451dlw-1-1654585952376-1712585553-400x400.jpg",
+      "price": "9.030.000 ₫",
+      "id": "Fm14"
+    },
+    {
+      "brand":"Omega",
+      "name": "Versus 36mm Nữ VSP641618",
+      "img": "https://www.watchstore.vn/wp-content/uploads/2022/08/vsp641618-1-652387053-684910801-1712587496-400x400.jpg",
+      "price": "4.675.000 ₫",
+      "id": "Fm15"
+    },
+    {
+      "brand":"Seiko",
+      "name": "Mido 33mm Nữ M001.230.22.036.91",
+      "img": "https://www.watchstore.vn/wp-content/uploads/2023/01/m001-1378360526-1268271006-1712590847-400x400.jpg",
+      "price": "14.875.000 ₫",
+      "id": "Fm16"
+    },
+    {
+      "brand":"Citizen",
+      "name": "Citizen 30mm Nữ EM0320-59D",
+      "img": "https://www.watchstore.vn/wp-content/uploads/2021/07/em0320-59d-1712572339-400x400.jpg",
+      "price": "7.670.000 ₫",
+      "id": "Fm17"
+    },
+    {
+      "brand":"Seiko",
+      "name": "Bentley 34mm Nữ BL2333-10LTDI",
+      "img": "https://www.watchstore.vn/wp-content/uploads/2024/03/bl2333-10ltdi-1-75836748-1949570291-1712670901-400x400.jpg",
+      "price": "3.478.000 ₫",
+      "id": "Fm18"
+    },
+    {
+      "brand":"Seiko",
+      "name": "Bulova 32mm Nữ 96L267678",
+      "img": "https://www.watchstore.vn/wp-content/uploads/2021/12/96l267-1-924642084-550870592-1712575302-400x400.jpg",
+      "price": "3.500.000 ₫",
+      "id": "Fm19"
+    },
+    {
+      "brand":"Seiko",
+      "name": "Freelook 32mm Nữ FL.1.10180.4",
+      "img": "https://www.watchstore.vn/wp-content/uploads/2021/11/fl-1825341786-821972922-1712574733-400x400.jpg",
+      "price": "1.455.000 ₫",
+      "id": "Fm20"
+    }
+  ],
+  
+  "Account": [
+    {
+      "username": "admin",
+      "password": "admin123",
+      "email": "admin@example.com"
+    },
+    {
+      "username": "user1",
+      "password": "user123",
+      "email": "user1@example.com"
+    },
+    {
+      "username": "user2",
+      "password": "user234",
+      "email": "user2@example.com"
+    },
+    {
+      "username": "user3",
+      "password": "user345",
+      "email": "user3@example.com"
+    },
+    {
+      "username": "user4",
+      "password": "user456",
+      "email": "user4@example.com"
+    },
+    {
+      "username": "user5",
+      "password": "user567",
+      "email": "user5@example.com"
+    },
+    {
+      "username": "user6",
+      "password": "user678",
+      "email": "user6@example.com"
+    },
+    {
+      "username": "user7",
+      "password": "user789",
+      "email": "user7@example.com"
+    },
+    {
+      "username": "user8",
+      "password": "user890",
+      "email": "user8@example.com"
+    },
+    {
+      "username": "user9",
+      "password": "user901",
+      "email": "user9@example.com"
+    }
+  ]
+}
