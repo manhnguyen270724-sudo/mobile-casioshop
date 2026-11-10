@@ -140,9 +140,9 @@ const SEED_PRODUCTS: Product[] = [
     id: "M1",
     brand: "G-Shock",
     name: "Đồng Hồ Bonest Gatti 47mm Nam BG5606-A2",
-    img: "https://images.unsplash.com/photo-1524805444758-089113d48a6d?w=700&auto=format&fit=crop&q=80",
+    img: "https://assets.ajio.com/medias/sys_master/root1/20251104/l2NJ/69099d4388d6d62ff8bda7cd/-473Wx593H-702252528-rosegold-MODEL.jpg",
     price: "6.197.500₫",
-    description: "Thiết kế thể thao góc cạnh, mặt số đa tầng, chống nước 200M, bảo hành 5 năm.",
+    description: "Thiết kế thể thao góc cạnh, mặt số đa tầng, chống nước 50M, máy cơ tự động.",
     rating: 4.9,
     reviewsCount: 142,
   },
@@ -150,9 +150,9 @@ const SEED_PRODUCTS: Product[] = [
     id: "M2",
     brand: "G-Shock",
     name: "Đồng Hồ Bonest Gatti 45mm Nam BG4001-R2",
-    img: "https://images.unsplash.com/photo-1587836374828-4dbafa94cf0e?w=700&auto=format&fit=crop&q=80",
+    img: "https://bonestgatti.in/cdn/shop/files/1_100.jpg?v=1771913962&width=700",
     price: "6.448.750₫",
-    description: "Bộ vỏ carbon siêu bền bỉ, chống sốc tuyệt đối, kính khoáng cường lực Mineral Glass.",
+    description: "Bộ vỏ Skeleton siêu bền bỉ, chống sốc, kính khoáng cường lực Mineral Glass.",
     rating: 4.8,
     reviewsCount: 98,
   },
@@ -160,7 +160,7 @@ const SEED_PRODUCTS: Product[] = [
     id: "M3",
     brand: "G-Shock",
     name: "Đồng Hồ Casio 51mm Nam GA-110GB-1ADR",
-    img: "https://images.unsplash.com/photo-1539185441755-769473a23570?w=700&auto=format&fit=crop&q=80",
+    img: "https://www.casio.com/content/dam/casio/product-info/locales/intl/en/timepiece/product/watch/G/GA/GA1/GA-110GB-1A/assets/GA-110GB-1A_Seq1.png.transform/main-visual-sp/image.png",
     price: "4.066.400₫",
     description: "Phiên bản Black & Gold huyền thoại, tích hợp đèn LED Auto Light, bấm giờ 1/1000s.",
     rating: 5.0,
@@ -170,7 +170,7 @@ const SEED_PRODUCTS: Product[] = [
     id: "M4",
     brand: "G-Shock",
     name: "Đồng Hồ Casio 45mm Nam MTP-VD01L-1EVUDF",
-    img: "https://images.unsplash.com/photo-1546868871-7041f2a55e12?w=700&auto=format&fit=crop&q=80",
+    img: "https://www.casio.com/content/dam/casio/product-info/locales/br/pt-br/timepiece/product/watch/M/MT/MTP/MTP-VD01L-1EV/assets/MTP-VD01L-1EV_Seq1.png.transform/main-visual-sp/image.png",
     price: "945.600₫",
     description: "Dây da thanh lịch, hiển thị ngày tại vị trí 3 giờ, chống nước 50M tiêu chuẩn hằng ngày.",
     rating: 4.7,
@@ -178,163 +178,133 @@ const SEED_PRODUCTS: Product[] = [
   },
   {
     id: "M5",
-    brand: "Citizen",
-    name: "Đồng Hồ Olym Pianus 42mm Nam OP990-45.24ADGK-GL-D",
-    img: "https://images.unsplash.com/photo-1533139502658-0198f920d8e8?w=700&auto=format&fit=crop&q=80",
-    price: "7.410.000₫",
-    description: "Mặt kính Sapphire nguyên khối chống xước, bộ máy cơ tự động Skeleton lộ tim độc đáo.",
+    brand: "Edifice",
+    name: "Đồng Hồ Casio Edifice Bluetooth EQB-1100D-1A",
+    img: "https://www.casio.com/content/dam/casio/product-info/locales/intl/en/timepiece/product/watch/E/EQ/EQB/EQB-1100D-1A/assets/EQB-1100D-1A_Seq1.png.transform/main-visual-sp/image.png",
+    price: "8.950.000₫",
+    description: "Thiết kế siêu mỏng kết nối smartphone Bluetooth, pin Tough Solar sạc bằng ánh sáng.",
     rating: 4.9,
     reviewsCount: 88,
   },
   {
     id: "M6",
-    brand: "Seiko",
-    name: "Đồng Hồ Bentley 42mm Nam BL2215-25MWWB-D",
-    img: "https://images.unsplash.com/photo-1614164185128-e4ec99c436d7?w=700&auto=format&fit=crop&q=80",
-    price: "8.510.000₫",
-    description: "Kiểu dáng quý phái, dây kim loại thép không gỉ 316L mạ PVD cao cấp.",
+    brand: "Edifice",
+    name: "Đồng Hồ Casio Edifice Chronograph ECB-900DB-1A",
+    img: "https://www.casio.com/content/dam/casio/product-info/locales/intl/en/timepiece/product/watch/E/EC/ECB/ECB-900DB-1A/assets/ECB-900DB-1A_Seq01.png.transform/main-visual-sp/image.png",
+    price: "6.520.000₫",
+    description: "Kiểu dáng đua xe thể thao mạnh mẽ, dây thép không gỉ 316L, đo tốc độ vòng chạy.",
     rating: 4.8,
     reviewsCount: 114,
   },
   {
     id: "M7",
     brand: "Vintage",
-    name: "Đồng Hồ SRWatch 40mm Nam SG7004.1101GM",
-    img: "https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?w=700&auto=format&fit=crop&q=80",
-    price: "3.105.000₫",
-    description: "Phong cách Retro cổ điển thập niên 80s, thiết kế mỏng nhẹ ôm trọn cổ tay.",
-    rating: 4.7,
-    reviewsCount: 52,
+    name: "Đồng Hồ Casio Vintage Điện Tử A168WA-1",
+    img: "https://www.casio.com/content/dam/casio/product-info/locales/intl/en/timepiece/product/watch/A/A1/A16/A168WA-1/assets/A168WA-1_Seq1.png.transform/main-visual-sp/image.png",
+    price: "1.150.000₫",
+    description: "Phong cách Retro cổ điển thập niên 80s, đèn nền Electro-Luminescent phát quang toàn mặt số.",
+    rating: 4.8,
+    reviewsCount: 152,
   },
   {
     id: "M8",
-    brand: "Vintage",
-    name: "Đồng Hồ Citizen 43mm Nam AN3600-59L",
-    img: "https://images.unsplash.com/photo-1508615039623-a25605d2b022?w=700&auto=format&fit=crop&q=80",
+    brand: "Citizen",
+    name: "Đồng Hồ Citizen 44mm Nam Chronograph AN3600-59L",
+    img: "https://cdn2.jomashop.com/media/catalog/product/cache/b3e31d40bbb1abcc90b26106659d5d3f/c/i/citizen-chronograph-quartz-blue-dial-mens-watch-an360059l.jpg?width=800&height=800",
     price: "4.320.000₫",
-    description: "Mặt số xanh navy cổ điển, 6 kim Chronograph bấm giờ thể thao mạnh mẽ.",
+    description: "Mặt số xanh navy thể thao, 6 kim Chronograph bấm giờ chính xác, chống nước 100M.",
     rating: 4.8,
     reviewsCount: 79,
   },
   {
     id: "M9",
     brand: "Citizen",
-    name: "Đồng Hồ Bonest Gatti 42mm Nam BG6003-A3",
-    img: "https://images.unsplash.com/photo-1509042239860-f550ce710b93?w=700&auto=format&fit=crop&q=80",
-    price: "7.537.500₫",
-    description: "Thiết kế thể thao sang trọng, dạ quang phát sáng ban đêm cực rõ nét.",
+    name: "Đồng Hồ Citizen Tsuyosa Automatic NJ0150-81E",
+    img: "https://cdn2.jomashop.com/media/catalog/product/cache/b3e31d40bbb1abcc90b26106659d5d3f/c/i/citizen-automatic-black-dial-mens-watch-nj015081e.jpg?width=800&height=800",
+    price: "7.850.000₫",
+    description: "Mặt kính Sapphire nguyên khối tích hợp kính lúp ô lịch, máy cơ tự động Calibre 8210.",
     rating: 4.9,
-    reviewsCount: 46,
+    reviewsCount: 86,
   },
   {
     id: "M10",
-    brand: "Omega",
-    name: "Đồng Hồ Bonest Gatti 46mm Nam BG5501-A4",
-    img: "https://images.unsplash.com/photo-1524592094714-0f0654e20314?w=700&auto=format&fit=crop&q=80",
-    price: "5.527.500₫",
-    description: "Dây cao su tự nhiên cao cấp kháng khuẩn, chống trầy xước, phong cách doanh nhân.",
+    brand: "G-Shock",
+    name: "Đồng Hồ Casio G-Shock Carbon GA-2100-1A1",
+    img: "https://www.casio.com/content/dam/casio/product-info/locales/intl/en/timepiece/product/watch/G/GA/GA2/GA-2100-1A1/assets/GA-2100-1A1_Seq03.jpg.transform/main-visual-sp/image.jpg",
+    price: "3.750.000₫",
+    description: "Dáng bát giác CasiOak All-Black huyền thoại, cấu trúc bảo vệ lõi carbon siêu bền.",
     rating: 5.0,
-    reviewsCount: 93,
+    reviewsCount: 293,
   },
   {
     id: "Fm11",
     brand: "Omega",
-    name: "Bulova 32mm Nữ 96L273967867",
-    img: "https://images.unsplash.com/photo-1594576722512-582bcd46fba3?w=700&auto=format&fit=crop&q=80",
-    price: "10.612.250₫",
-    description: "Đồng hồ nữ đính đá cao cấp phong cách quý phái, thiết kế tinh xảo, chống nước 30M.",
+    name: "Bulova 32mm Nữ Phantom Swarovski 96L273",
+    img: "https://cdn2.jomashop.com/media/catalog/product/b/u/bulova-phantom-black-pave-dial-stainless-steel-ladies-watch-96l273.jpg",
+    price: "5.850.000₫",
+    description: "Đồng hồ nữ đính hơn 400 viên pha lê Swarovski cao cấp, phong cách dạ tiệc quý phái.",
     rating: 4.9,
     reviewsCount: 38,
   },
   {
     id: "Fm12",
-    brand: "Citizen",
-    name: "Bulova 22mm Nữ 96X136673",
-    img: "https://images.unsplash.com/photo-1526045612212-70caf35c14df?w=700&auto=format&fit=crop&q=80",
-    price: "4.250.000₫",
-    description: "Kích thước 22mm nhỏ gọn, trang nhã, kính cứng Mineral Crystal chống va đập tốt.",
-    rating: 4.8,
-    reviewsCount: 45,
+    brand: "Seiko",
+    name: "Đồng Hồ Seiko 5 Sports SKX Series 42.5mm SRPD55K1",
+    img: "https://www.seikowatches.com/us-en/-/media/Images/Product--Image/All/Seiko/2022/02/20/02/14/SRPD55K1/SRPD55K1.png?mh=1200&mw=1200",
+    price: "6.850.000₫",
+    description: "Biểu tượng đồng hồ lặn thể thao, dạ quang Lumibrite rực rỡ, bộ máy Automatic 4R36 bền bỉ.",
+    rating: 5.0,
+    reviewsCount: 215,
   },
   {
     id: "Fm13",
-    brand: "Omega",
-    name: "Freelook 34mm Nữ FL.1.10049.1",
-    img: "https://images.unsplash.com/photo-1513094735237-8f2714d57c13?w=700&auto=format&fit=crop&q=80",
-    price: "1.507.500₫",
-    description: "Dây kim loại mạ vàng hồng thanh lịch, mặt số tối giản dễ phối đồ công sở.",
-    rating: 4.7,
-    reviewsCount: 29,
+    brand: "Seiko",
+    name: "Đồng Hồ Seiko Presage Cocktail Time 40.5mm SRPB41J1",
+    img: "https://www.seikowatches.com/us-en/-/media/Images/Product--Image/America/Seiko/presage/SRPB41J1/SRPB41J1.png?mh=1200&mw=1200",
+    price: "11.200.000₫",
+    description: "Họa tiết mặt số Blue Moon sunburst lấy cảm hứng từ ly cocktail, đáy lộ cơ tinh xảo.",
+    rating: 4.9,
+    reviewsCount: 94,
   },
   {
     id: "Fm14",
     brand: "Omega",
-    name: "Ogival 34mm Nữ OG380-451DLW",
-    img: "https://images.unsplash.com/photo-1511367461989-f85a21fda167?w=700&auto=format&fit=crop&q=80",
-    price: "9.030.000₫",
-    description: "Bộ máy Thụy Sĩ chuẩn xác, viền đính kim cương nhân tạo Swarovski lấp lánh.",
+    name: "Đồng Hồ Omega Speedmaster Moonwatch 310.30.42.50.01.001",
+    img: "https://www.omegawatches.com/media/catalog/product/o/m/omega-speedmaster-moonwatch-professional-co-axial-master-chronometer-chronograph-42-mm-31030425001002-198df2.png?w=1024",
+    price: "175.000.000₫",
+    description: "Huyền thoại đồng hồ đặt chân lên Mặt Trăng, chuẩn Chronometer Co-Axial Calibre 3861.",
     rating: 5.0,
     reviewsCount: 67,
   },
   {
     id: "Fm15",
     brand: "Omega",
-    name: "Versus 36mm Nữ VSP641618",
-    img: "https://images.unsplash.com/photo-1518131672697-613becd4fab5?w=700&auto=format&fit=crop&q=80",
-    price: "4.675.000₫",
-    description: "Thương hiệu thời trang Italy, thiết kế cá tính, dây da chính hãng êm ái.",
-    rating: 4.8,
-    reviewsCount: 41,
+    name: "Đồng Hồ Omega Seamaster Diver 300M 210.30.42.20.01.001",
+    img: "https://www.omegawatches.com/media/catalog/product/o/m/omega-seamaster-diver-300m-co-axial-master-chronometer-42-mm-21030422001001-23ffb2.png?w=1024",
+    price: "135.000.000₫",
+    description: "Mặt số gốm đen khắc sóng laser, van thoát khí Helium, chuẩn kháng từ 15.000 Gauss.",
+    rating: 5.0,
+    reviewsCount: 141,
   },
   {
     id: "Fm16",
-    brand: "Seiko",
-    name: "Mido 33mm Nữ M001.230.22.036.91",
-    img: "https://images.unsplash.com/photo-1612817288484-6f916006741a?w=700&auto=format&fit=crop&q=80",
+    brand: "Omega",
+    name: "Mido 33mm Nữ Belluna Automatic M001.230.11.066.91",
+    img: "https://cdn2.jomashop.com/media/catalog/product/cache/b3e31d40bbb1abcc90b26106659d5d3f/m/i/mido-belluna-automatic-diamond-black-dial-ladies-watch-m001.230.11.066.91.jpg?width=800&height=800",
     price: "14.875.000₫",
-    description: "Kính Sapphire chống trầy xước tuyệt đối, mạ vàng PVD demi sang trọng đẳng cấp.",
+    description: "Kính Sapphire chống trầy xước tuyệt đối, cọc số đính kim cương tự nhiên đẳng cấp Thụy Sĩ.",
     rating: 5.0,
     reviewsCount: 82,
   },
   {
     id: "Fm17",
     brand: "Citizen",
-    name: "Citizen 30mm Nữ EM0320-59D",
-    img: "https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=700&auto=format&fit=crop&q=80",
+    name: "Citizen 30mm Nữ L Arcly Sunrise EM0320-59D",
+    img: "https://www.design.citizenwatch-global.com/_next/image?url=https%3A%2F%2Fms.citizen.jp%2Fassets%2Feee6276f-17d1-4400-966a-4e279ce6c781%3Fversion%3Df18b7a70ac652798991b363baf663da3&w=640&q=75",
     price: "7.670.000₫",
-    description: "Công nghệ năng lượng ánh sáng Eco-Drive không cần thay pin, vỏ thép 316L sáng bóng.",
+    description: "Công nghệ ánh sáng Eco-Drive không cần thay pin, vỏ thép 316L đính kim cương trượt tự do.",
     rating: 4.9,
     reviewsCount: 56,
-  },
-  {
-    id: "Fm18",
-    brand: "Seiko",
-    name: "Bentley 34mm Nữ BL2333-10LTDI",
-    img: "https://images.unsplash.com/photo-1542496658-e33a6d0d50f6?w=700&auto=format&fit=crop&q=80",
-    price: "3.478.000₫",
-    description: "Thiết kế mặt khảm xà cừ tự nhiên chuyển sắc, dây da trẻ trung hiện đại.",
-    rating: 4.7,
-    reviewsCount: 34,
-  },
-  {
-    id: "Fm19",
-    brand: "Seiko",
-    name: "Bulova 32mm Nữ 96L267678",
-    img: "https://images.unsplash.com/photo-1508057198894-247b23fe5ade?w=700&auto=format&fit=crop&q=80",
-    price: "3.500.000₫",
-    description: "Dáng vuông thanh lịch cổ điển, mặt số số La Mã nổi bật, máy pin Nhật Bản.",
-    rating: 4.8,
-    reviewsCount: 43,
-  },
-  {
-    id: "Fm20",
-    brand: "Seiko",
-    name: "Freelook 32mm Nữ FL.1.10180.4",
-    img: "https://images.unsplash.com/photo-1619134778706-7015533a6150?w=700&auto=format&fit=crop&q=80",
-    price: "1.455.000₫",
-    description: "Giá học sinh sinh viên siêu hợp lý, chất liệu hợp kim cao cấp mạ điện phân bền màu.",
-    rating: 4.6,
-    reviewsCount: 71,
   },
 ];
 
@@ -414,34 +384,12 @@ class MemoryStorage {
         const p = window.localStorage.getItem("casio_products");
         if (p) {
           const loadedProds: Product[] = JSON.parse(p);
-          // Automatically repair any old/broken watchstore.vn URLs
-          const repaired = loadedProds.map((item) => {
-            if (!item.img || item.img.includes("watchstore.vn")) {
-              const seedMatch = SEED_PRODUCTS.find((sp) => sp.id === item.id);
-              return { ...item, img: seedMatch ? seedMatch.img : SEED_PRODUCTS[0].img };
-            }
-            return item;
-          });
-          const existingIds = new Set(repaired.map((item) => item.id));
+          const existingIds = new Set(loadedProds.map((item) => item.id));
           const missingProds = SEED_PRODUCTS.filter((item) => !existingIds.has(item.id));
-          this.products = [...repaired, ...missingProds];
-          this.saveToWebStorage();
+          this.products = [...loadedProds, ...missingProds];
         }
         const o = window.localStorage.getItem("casio_orders");
-        if (o) {
-          const loadedOrders: Order[] = JSON.parse(o);
-          this.orders = loadedOrders.map((ord) => ({
-            ...ord,
-            items: ord.items.map((it) => {
-              if (!it.img || it.img.includes("watchstore.vn")) {
-                const seedMatch = SEED_PRODUCTS.find((sp) => sp.id === it.id);
-                return { ...it, img: seedMatch ? seedMatch.img : SEED_PRODUCTS[0].img };
-              }
-              return it;
-            }),
-          }));
-          this.saveToWebStorage();
-        }
+        if (o) this.orders = JSON.parse(o);
       } catch {
         // use defaults
       }
@@ -561,11 +509,6 @@ class DatabaseManager {
            VALUES (?, ?, ?, ?, ?, ?, ?, ?);`,
           [p.id, p.brand, p.name, p.img, String(p.price), p.description || "", p.rating || 5.0, p.reviewsCount || 0]
         );
-        // Automatically repair any old/broken watchstore.vn image links in existing databases
-        this.db?.runSync(
-          "UPDATE products SET img = ? WHERE id = ? AND (img LIKE '%watchstore.vn%' OR img IS NULL OR img = '');",
-          [p.img, p.id]
-        );
       });
 
       const orderCountRes = this.db.getFirstSync<{ count: number }>(
@@ -658,7 +601,7 @@ class DatabaseManager {
     if (!this.isNativeSQLite || !this.db) {
       memoryStore.users = memoryStore.users.map((u) =>
         u.username.toLowerCase() === usernameOrEmail.toLowerCase() ||
-        u.email.toLowerCase() === usernameOrEmail.toLowerCase()
+          u.email.toLowerCase() === usernameOrEmail.toLowerCase()
           ? { ...u, role: newRole }
           : u
       );
@@ -857,4 +800,3 @@ class DatabaseManager {
 
 export const dbService = new DatabaseManager();
 export { SEED_CATEGORIES, SEED_ORDERS, SEED_PRODUCTS, SEED_USERS };
-
