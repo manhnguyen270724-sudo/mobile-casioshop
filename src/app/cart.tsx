@@ -1,8 +1,8 @@
 import BottomNav from "@/components/bottom-nav";
-import StoreHeader from "@/components/store-header";
+import Header from "@/components/Header";
 import { CasioColors } from "@/constants/theme";
 import { useStore } from "@/context/StoreContext";
-import { formatPrice } from "@/data/products";
+import { formatPrice } from "@/database/products";
 import { Ionicons } from "@expo/vector-icons";
 import { router } from "expo-router";
 import { useState } from "react";
@@ -48,7 +48,7 @@ export default function CartScreen() {
 
   return (
     <View style={styles.screen}>
-      <StoreHeader title="GIỎ HÀNG" showBack={true} />
+      <Header title="GIỎ HÀNG" showBack={true} />
 
       {cart.length === 0 ? (
         <View style={styles.emptyContainer}>

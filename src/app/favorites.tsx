@@ -1,20 +1,20 @@
 import BottomNav from "@/components/bottom-nav";
+import Header from "@/components/Header";
 import ProductCard from "@/components/product-card";
-import StoreHeader from "@/components/store-header";
 import { CasioColors } from "@/constants/theme";
 import { useStore } from "@/context/StoreContext";
-import { products } from "@/data/products";
 import { Ionicons } from "@expo/vector-icons";
 import { router } from "expo-router";
+import React from "react";
 import { FlatList, Pressable, StyleSheet, Text, View } from "react-native";
 
 export default function FavoritesScreen() {
-  const { favorites } = useStore();
+  const { favorites, products } = useStore();
   const favoriteProducts = products.filter((p) => favorites.includes(p.id));
 
   return (
     <View style={styles.screen}>
-      <StoreHeader title="YÊU THÍCH" showBack={false} showWishlist={false} />
+      <Header title="YÊU THÍCH" showBack={false} />
 
       {favoriteProducts.length === 0 ? (
         <View style={styles.emptyContainer}>

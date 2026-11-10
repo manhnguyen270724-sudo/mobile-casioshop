@@ -1,3 +1,4 @@
+import { ToastProvider } from "@/components/common/Toast";
 import { CasioColors } from "@/constants/theme";
 import { StoreProvider } from "@/context/StoreContext";
 import { Stack } from "expo-router";
@@ -16,16 +17,17 @@ export default function RootLayout() {
 
   return (
     <StoreProvider>
-      <StatusBar style="light" />
-      <Stack
-        screenOptions={{
-          headerShown: false,
-          animation: "slide_from_right",
-          animationDuration: 280,
-          gestureEnabled: true,
-          contentStyle: { backgroundColor: CasioColors.background },
-        }}
-      >
+      <ToastProvider>
+        <StatusBar style="light" />
+        <Stack
+          screenOptions={{
+            headerShown: false,
+            animation: "slide_from_right",
+            animationDuration: 280,
+            gestureEnabled: true,
+            contentStyle: { backgroundColor: CasioColors.background },
+          }}
+        >
         <Stack.Screen
           name="index"
           options={{
@@ -81,7 +83,38 @@ export default function RootLayout() {
             animation: "slide_from_right",
           }}
         />
+        <Stack.Screen
+          name="admin/index"
+          options={{
+            animation: "slide_from_right",
+          }}
+        />
+        <Stack.Screen
+          name="admin/users"
+          options={{
+            animation: "slide_from_right",
+          }}
+        />
+        <Stack.Screen
+          name="admin/categories"
+          options={{
+            animation: "slide_from_right",
+          }}
+        />
+        <Stack.Screen
+          name="admin/products"
+          options={{
+            animation: "slide_from_right",
+          }}
+        />
+        <Stack.Screen
+          name="admin/orders"
+          options={{
+            animation: "slide_from_right",
+          }}
+        />
       </Stack>
+      </ToastProvider>
     </StoreProvider>
   );
 }

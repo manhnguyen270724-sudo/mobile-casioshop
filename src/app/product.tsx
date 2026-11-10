@@ -1,7 +1,7 @@
-import StoreHeader from "@/components/store-header";
+import Header from "@/components/Header";
 import { CasioColors } from "@/constants/theme";
 import { useStore } from "@/context/StoreContext";
-import { formatPrice, getProduct, parsePrice } from "@/data/products";
+import { formatPrice, getProduct, parsePrice } from "@/database/products";
 import { Ionicons } from "@expo/vector-icons";
 import { router, useLocalSearchParams } from "expo-router";
 import { useState } from "react";
@@ -18,16 +18,16 @@ import {
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 
 export default function ProductScreen() {
-  const { id } = useLocalSearchParams();
+  const { id } = useLocalSearchParams<{ id?: string }>();
   const insets = useSafeAreaInsets();
-  const product = getProduct(id);
-  const { addToCart, toggleFavorite, isFavorite } = useStore();
+  const { products: storeProducts, addToCart, toggleFavorite, isFavorite } = useStore();
+  const product = storeProducts.find((p) => p.id === id) || getProduct(id);
   const [quantity, setQuantity] = useState(1);
 
   if (!product) {
     return (
       <View style={styles.screen}>
-        <StoreHeader showBack title="SẢN PHẨM" />
+        <Header showBack title="SẢN PHẨM" />
         <View style={styles.notFoundContainer}>
           <Ionicons name="alert-circle-outline" size={56} color={CasioColors.primary} />
           <Text style={styles.emptyText}>Không tìm thấy sản phẩm này.</Text>
@@ -61,7 +61,7 @@ export default function ProductScreen() {
 
   return (
     <View style={styles.screen}>
-      <StoreHeader showBack title="CHI TIẾT ĐỒNG HỒ" />
+      <Header showBack title="CHI TIẾT ĐỒNG HỒ" />
 
       <ScrollView contentContainerStyle={styles.content}>
         {/* Product Image Area */}

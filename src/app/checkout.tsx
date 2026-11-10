@@ -1,7 +1,7 @@
-import StoreHeader from "@/components/store-header";
+import Header from "@/components/Header";
 import { CasioColors } from "@/constants/theme";
 import { useStore } from "@/context/StoreContext";
-import { formatPrice } from "@/data/products";
+import { formatPrice } from "@/database/products";
 import { Ionicons } from "@expo/vector-icons";
 import { router } from "expo-router";
 import { useState } from "react";
@@ -18,15 +18,17 @@ import {
 } from "react-native";
 
 export default function CheckoutScreen() {
-  const { cart, cartSubtotal, cartTotal, discountAmount, shippingFee, placeOrder } =
+  const { cart, cartSubtotal, cartTotal, discountAmount, shippingFee, placeOrder, user } =
     useStore();
 
-  const [name, setName] = useState("Nguyễn Văn An");
-  const [phone, setPhone] = useState("0908 123 456");
-  const [address, setAddress] = useState("123 Lê Lợi, Phường Bến Nghé, Quận 1, TP. Hồ Chí Minh");
+  const [name, setName] = useState(user?.name || "Nguyễn Văn An");
+  const [phone, setPhone] = useState(user?.phone || "0908 123 456");
+  const [address, setAddress] = useState(
+    user?.address || "123 Lê Lợi, Phường Bến Nghé, Quận 1, TP. Hồ Chí Minh"
+  );
   const [note, setNote] = useState("");
-  const [paymentMethod, setPaymentMethod] = useState("cod"); // 'cod' | 'bank' | 'momo'
-  const [shippingMethod, setShippingMethod] = useState("standard"); // 'standard' | 'express'
+  const [paymentMethod, setPaymentMethod] = useState<"cod" | "bank" | "momo">("cod");
+  const [shippingMethod, setShippingMethod] = useState<"standard" | "express">("standard");
 
   const actualShippingFee =
     shippingMethod === "express" ? shippingFee + 30000 : shippingFee;
@@ -50,6 +52,7 @@ export default function CheckoutScreen() {
       customerName: name,
       phone,
       address,
+      email: user?.email || "guest@example.com",
       note,
       paymentMethod,
       shippingMethod,
@@ -65,7 +68,7 @@ export default function CheckoutScreen() {
   if (cart.length === 0) {
     return (
       <View style={styles.screen}>
-        <StoreHeader title="THANH TOÁN" showBack={true} />
+        <Header title="THANH TOÁN" showBack={true} />
         <View style={styles.emptyContainer}>
           <Ionicons name="cart-outline" size={60} color={CasioColors.primary} />
           <Text style={styles.emptyText}>Bạn không có sản phẩm nào để thanh toán.</Text>
@@ -82,7 +85,7 @@ export default function CheckoutScreen() {
       behavior={Platform.OS === "ios" ? "padding" : undefined}
       style={styles.screen}
     >
-      <StoreHeader title="THANH TOÁN" showBack={true} showCart={false} />
+      <Header title="THANH TOÁN" showBack={true} showCart={false} />
 
       <ScrollView contentContainerStyle={styles.content}>
         {/* Step Indicator */}

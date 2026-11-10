@@ -2,8 +2,18 @@ import { CasioColors } from "@/constants/theme";
 import { useStore } from "@/context/StoreContext";
 import { Ionicons } from "@expo/vector-icons";
 import { router } from "expo-router";
+import React from "react";
 import { Image, Platform, Pressable, StyleSheet, Text, View } from "react-native";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
+
+interface StoreHeaderProps {
+  title?: string;
+  showBack?: boolean;
+  showSearch?: boolean;
+  showWishlist?: boolean;
+  showCart?: boolean;
+  showUser?: boolean;
+}
 
 export default function StoreHeader({
   title = "CASIO STORE",
@@ -12,7 +22,7 @@ export default function StoreHeader({
   showWishlist = true,
   showCart = true,
   showUser = true,
-}) {
+}: StoreHeaderProps) {
   const insets = useSafeAreaInsets();
   const { cartCount, favoritesCount, user } = useStore();
 

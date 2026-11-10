@@ -1,7 +1,7 @@
-import StoreHeader from "@/components/store-header";
+import Header from "@/components/Header";
 import { CasioColors } from "@/constants/theme";
 import { useStore } from "@/context/StoreContext";
-import { formatPrice } from "@/data/products";
+import { formatPrice } from "@/database/products";
 import { Ionicons } from "@expo/vector-icons";
 import { router, useLocalSearchParams } from "expo-router";
 import {
@@ -14,7 +14,7 @@ import {
 } from "react-native";
 
 export default function OrderSuccessScreen() {
-  const { orderId } = useLocalSearchParams();
+  const { orderId } = useLocalSearchParams<{ orderId?: string }>();
   const { lastOrder } = useStore();
 
   const id = orderId || lastOrder?.id || "CASIO-928145";
@@ -23,7 +23,7 @@ export default function OrderSuccessScreen() {
 
   return (
     <View style={styles.screen}>
-      <StoreHeader title="ĐẶT HÀNG THÀNH CÔNG" showBack={false} showCart={false} />
+      <Header title="ĐẶT HÀNG THÀNH CÔNG" showBack={false} showCart={false} />
 
       <ScrollView contentContainerStyle={styles.content}>
         <View style={styles.celebrationCard}>
@@ -73,8 +73,8 @@ export default function OrderSuccessScreen() {
               {lastOrder?.paymentMethod === "cod"
                 ? "Thanh toán khi nhận hàng (COD)"
                 : lastOrder?.paymentMethod === "bank"
-                ? "Chuyển khoản Ngân hàng"
-                : "Ví MoMo/VNPAY"}
+                  ? "Chuyển khoản Ngân hàng"
+                  : "Ví MoMo/VNPAY"}
             </Text>
           </View>
 

@@ -1,11 +1,27 @@
 import { CasioColors } from "@/constants/theme";
 import { useStore } from "@/context/StoreContext";
-import { formatPrice, parsePrice } from "@/data/products";
+import { formatPrice, parsePrice } from "@/database/products";
+import { Product } from "@/types/store";
 import { Ionicons } from "@expo/vector-icons";
 import { router } from "expo-router";
-import { Image, Pressable, StyleSheet, Text, View } from "react-native";
+import {
+  GestureResponderEvent,
+  Image,
+  Pressable,
+  StyleProp,
+  StyleSheet,
+  Text,
+  View,
+  ViewStyle,
+} from "react-native";
 
-export default function ProductCard({ product, horizontal = false, style }) {
+interface ProductCardProps {
+  product: Product;
+  horizontal?: boolean;
+  style?: StyleProp<ViewStyle>;
+}
+
+export default function ProductCard({ product, horizontal = false, style }: ProductCardProps) {
   const { addToCart, toggleFavorite, isFavorite } = useStore();
   const favorited = isFavorite(product.id);
 
@@ -25,7 +41,7 @@ export default function ProductCard({ product, horizontal = false, style }) {
           />
           <Pressable
             hitSlop={8}
-            onPress={(e) => {
+            onPress={(e: GestureResponderEvent) => {
               e.stopPropagation();
               toggleFavorite(product.id);
             }}

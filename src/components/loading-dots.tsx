@@ -1,18 +1,24 @@
 import { CasioColors } from "@/constants/theme";
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Animated, StyleSheet, View } from "react-native";
+
+interface LoadingDotsProps {
+  color?: string;
+  size?: number;
+  spacing?: number;
+}
 
 export default function LoadingDots({
   color = CasioColors.accent,
   size = 11,
   spacing = 8,
-}) {
+}: LoadingDotsProps) {
   const [dot1] = useState(() => new Animated.Value(0));
   const [dot2] = useState(() => new Animated.Value(0));
   const [dot3] = useState(() => new Animated.Value(0));
 
   useEffect(() => {
-    const create3DBounce = (anim, delay) => {
+    const create3DBounce = (anim: Animated.Value, delay: number) => {
       return Animated.loop(
         Animated.sequence([
           Animated.delay(delay),
@@ -46,7 +52,7 @@ export default function LoadingDots({
     };
   }, [dot1, dot2, dot3]);
 
-  const render3DSphere = (animVal, key) => {
+  const render3DSphere = (animVal: Animated.Value, key: string) => {
     const translateY = animVal.interpolate({
       inputRange: [0, 1],
       outputRange: [0, -12], // 3D vertical jump

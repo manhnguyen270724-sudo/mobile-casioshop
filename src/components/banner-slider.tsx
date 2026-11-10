@@ -1,11 +1,13 @@
 import { CasioColors } from "@/constants/theme";
 import { Ionicons } from "@expo/vector-icons";
 import { router } from "expo-router";
-import { useEffect, useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import {
   Dimensions,
   FlatList,
   Image,
+  NativeScrollEvent,
+  NativeSyntheticEvent,
   Pressable,
   StyleSheet,
   Text,
@@ -15,7 +17,16 @@ import {
 const { width: SCREEN_WIDTH } = Dimensions.get("window");
 const BANNER_WIDTH = SCREEN_WIDTH - 24; // with horizontal margin
 
-const BANNERS = [
+interface BannerItem {
+  id: string;
+  tag: string;
+  title: string;
+  subtitle: string;
+  image: string;
+  brandTarget: string;
+}
+
+const BANNERS: BannerItem[] = [
   {
     id: "b1",
     tag: "G-SHOCK 2026",
@@ -47,7 +58,7 @@ const BANNERS = [
 
 export default function BannerSlider() {
   const [activeIndex, setActiveIndex] = useState(0);
-  const flatListRef = useRef(null);
+  const flatListRef = useRef<FlatList<BannerItem>>(null);
 
   useEffect(() => {
     const timer = setInterval(() => {
@@ -66,7 +77,7 @@ export default function BannerSlider() {
     return () => clearInterval(timer);
   }, []);
 
-  const handleScroll = (event) => {
+  const handleScroll = (event: NativeSyntheticEvent<NativeScrollEvent>) => {
     const offsetX = event.nativeEvent.contentOffset.x;
     const index = Math.round(offsetX / BANNER_WIDTH);
     if (index >= 0 && index < BANNERS.length && index !== activeIndex) {
@@ -152,12 +163,20 @@ const styles = StyleSheet.create({
     elevation: 6,
   },
   bannerImage: {
-    ...StyleSheet.absoluteFillObject,
+    position: "absolute",
+    top: 0,
+    left: 0,
+    right: 0,
+    bottom: 0,
     width: "100%",
     height: "100%",
   },
   overlay: {
-    ...StyleSheet.absoluteFillObject,
+    position: "absolute",
+    top: 0,
+    left: 0,
+    right: 0,
+    bottom: 0,
     backgroundColor: "rgba(11, 31, 51, 0.65)",
   },
   bannerContent: {
