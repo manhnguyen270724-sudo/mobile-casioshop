@@ -412,6 +412,14 @@ export function StoreProvider({ children }: { children: ReactNode }) {
     );
   }, []);
 
+  const resetDatabase = useCallback(() => {
+    const data = dbService.resetDatabase();
+    setProducts(data.products);
+    setCategories(data.categories);
+    setUsers(data.users);
+    setOrders(data.orders);
+  }, []);
+
   const value: StoreContextType = useMemo(
     () => ({
       products,
@@ -457,6 +465,7 @@ export function StoreProvider({ children }: { children: ReactNode }) {
       lastOrder,
       placeOrder,
       updateOrderStatus,
+      resetDatabase,
     }),
     [
       products,
@@ -493,6 +502,7 @@ export function StoreProvider({ children }: { children: ReactNode }) {
       lastOrder,
       placeOrder,
       updateOrderStatus,
+      resetDatabase,
     ]
   );
 

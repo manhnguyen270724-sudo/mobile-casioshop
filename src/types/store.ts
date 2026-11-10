@@ -121,4 +121,7 @@ export interface StoreContextType {
   lastOrder: Order | null;
   placeOrder: (orderData: Partial<Order>) => Order;
   updateOrderStatus: (orderId: string, newStatus: OrderStatus) => void;
+
+  // Database Management
+  resetDatabase: () => void;
 }

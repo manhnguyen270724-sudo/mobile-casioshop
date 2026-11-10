@@ -384,9 +384,20 @@ class MemoryStorage {
         const p = window.localStorage.getItem("casio_products");
         if (p) {
           const loadedProds: Product[] = JSON.parse(p);
-          const existingIds = new Set(loadedProds.map((item) => item.id));
+          const seedMap = new Map(SEED_PRODUCTS.map((sp) => [sp.id, sp]));
+          const updated = loadedProds
+            .filter((item) => !["Fm18", "Fm19", "Fm20"].includes(item.id))
+            .map((item) => {
+              const seed = seedMap.get(item.id);
+              if (seed) {
+                return { ...item, img: seed.img, name: seed.name, brand: seed.brand, price: seed.price, description: seed.description };
+              }
+              return item;
+            });
+          const existingIds = new Set(updated.map((item) => item.id));
           const missingProds = SEED_PRODUCTS.filter((item) => !existingIds.has(item.id));
-          this.products = [...loadedProds, ...missingProds];
+          this.products = [...updated, ...missingProds];
+          this.saveToWebStorage();
         }
         const o = window.localStorage.getItem("casio_orders");
         if (o) this.orders = JSON.parse(o);
@@ -505,10 +516,17 @@ class DatabaseManager {
 
       SEED_PRODUCTS.forEach((p) => {
         this.db?.runSync(
-          `INSERT OR IGNORE INTO products (id, brand, name, img, price, description, rating, reviewsCount)
+          `INSERT OR REPLACE INTO products (id, brand, name, img, price, description, rating, reviewsCount)
            VALUES (?, ?, ?, ?, ?, ?, ?, ?);`,
           [p.id, p.brand, p.name, p.img, String(p.price), p.description || "", p.rating || 5.0, p.reviewsCount || 0]
         );
+      });
+
+      const activeSeedIds = new Set(SEED_PRODUCTS.map((p) => p.id));
+      ["Fm18", "Fm19", "Fm20"].forEach((oldId) => {
+        if (!activeSeedIds.has(oldId)) {
+          this.db?.runSync("DELETE FROM products WHERE id = ?;", [oldId]);
+        }
       });
 
       const orderCountRes = this.db.getFirstSync<{ count: number }>(
@@ -794,6 +812,82 @@ class DatabaseManager {
       this.db.runSync("UPDATE orders SET status = ? WHERE id = ?;", [newStatus, orderId]);
     } catch (e) {
       console.warn("updateOrderStatus error:", e);
+    }
+  }
+
+  resetDatabase(): {
+    users: User[];
+    categories: string[];
+    products: Product[];
+    orders: Order[];
+  } {
+    if (!this.isNativeSQLite || !this.db) {
+      memoryStore.users = [...SEED_USERS];
+      memoryStore.categories = [...SEED_CATEGORIES];
+      memoryStore.products = [...SEED_PRODUCTS];
+      memoryStore.orders = [...SEED_ORDERS];
+      memoryStore.saveToWebStorage();
+      return {
+        users: memoryStore.users,
+        categories: memoryStore.categories,
+        products: memoryStore.products,
+        orders: memoryStore.orders,
+      };
+    }
+
+    try {
+      this.db.runSync("DELETE FROM products;");
+      this.db.runSync("DELETE FROM categories;");
+
+      SEED_CATEGORIES.forEach((cat, index) => {
+        this.db?.runSync(
+          "INSERT INTO categories (id, name) VALUES (?, ?);",
+          [`cat-${index + 1}`, cat]
+        );
+      });
+
+      SEED_PRODUCTS.forEach((p) => {
+        this.db?.runSync(
+          `INSERT INTO products (id, brand, name, img, price, description, rating, reviewsCount)
+           VALUES (?, ?, ?, ?, ?, ?, ?, ?);`,
+          [p.id, p.brand, p.name, p.img, String(p.price), p.description || "", p.rating || 5.0, p.reviewsCount || 0]
+        );
+      });
+
+      const rawUsers = this.db.getAllSync<User>("SELECT * FROM users;");
+      const rawCats = this.db.getAllSync<{ id: string; name: string }>("SELECT * FROM categories;");
+      const rawProds = this.db.getAllSync<Product>("SELECT * FROM products;");
+      const rawOrders = this.db.getAllSync<any>("SELECT * FROM orders ORDER BY createdAt DESC;");
+
+      return {
+        users: rawUsers,
+        categories: rawCats.map((c) => c.name),
+        products: rawProds,
+        orders: rawOrders.map((o) => ({
+          id: o.id,
+          customerName: o.customerName,
+          email: o.email,
+          phone: o.phone,
+          address: o.address,
+          items: JSON.parse(o.itemsJson || "[]"),
+          subtotal: o.subtotal,
+          discountAmount: o.discountAmount,
+          shippingFee: o.shippingFee,
+          total: o.total,
+          createdAt: o.createdAt,
+          status: o.status,
+          paymentMethod: o.paymentMethod,
+          shippingMethod: o.shippingMethod,
+        })),
+      };
+    } catch (e) {
+      console.warn("resetDatabase error:", e);
+      return {
+        users: SEED_USERS,
+        categories: SEED_CATEGORIES,
+        products: SEED_PRODUCTS,
+        orders: SEED_ORDERS,
+      };
     }
   }
 }

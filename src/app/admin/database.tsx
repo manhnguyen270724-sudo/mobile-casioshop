@@ -6,6 +6,7 @@ import { dbService } from "@/database/sqlite";
 import { Ionicons } from "@expo/vector-icons";
 import React, { useMemo, useState } from "react";
 import {
+  Alert,
   Platform,
   Pressable,
   ScrollView,
@@ -18,10 +19,28 @@ import {
 type TableName = "products" | "users" | "categories" | "orders";
 
 export default function AdminDatabaseScreen() {
-  const { products, users, categories, orders } = useStore();
+  const { products, users, categories, orders, resetDatabase } = useStore();
   const [activeTable, setActiveTable] = useState<TableName>("products");
   const [searchQuery, setSearchQuery] = useState("");
   const [viewMode, setViewMode] = useState<"card" | "raw">("card");
+
+  const handleResetDb = () => {
+    Alert.alert(
+      "Xác nhận đặt lại CSDL",
+      "Hệ thống sẽ cập nhật lại toàn bộ bảng sản phẩm và danh mục theo mã nguồn mới nhất trong sqlite.ts (bao gồm toàn bộ link ảnh mới). Bạn có chắc chắn muốn thực hiện?",
+      [
+        { text: "Hủy", style: "cancel" },
+        {
+          text: "Xác nhận đặt lại",
+          style: "destructive",
+          onPress: () => {
+            resetDatabase();
+            Alert.alert("Thành công", "Đã cập nhật toàn bộ CSDL và link ảnh mới nhất!");
+          },
+        },
+      ]
+    );
+  };
 
   const tableCounts = {
     products: products.length,
@@ -68,6 +87,15 @@ export default function AdminDatabaseScreen() {
             </Text>
           </View>
         </View>
+
+        {/* Sync / Reset Database Button */}
+        <Pressable
+          onPress={handleResetDb}
+          style={({ pressed }) => [styles.resetDbBtn, pressed && styles.pressed]}
+        >
+          <Ionicons name="refresh-circle-outline" size={20} color="#ffffff" />
+          <Text style={styles.resetDbBtnText}>Làm Mới & Đồng Bộ Link Ảnh CSDL Mới Nhất</Text>
+        </Pressable>
 
         {/* Table Selector Tabs */}
         <View style={styles.tableSelector}>
@@ -285,6 +313,30 @@ const styles = StyleSheet.create({
     color: "#94a3b8",
     fontSize: 11,
     marginTop: 2,
+  },
+  resetDbBtn: {
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "center",
+    gap: 8,
+    backgroundColor: CasioColors.primary,
+    paddingVertical: 12,
+    paddingHorizontal: 16,
+    borderRadius: 10,
+    marginBottom: 14,
+    shadowColor: "#000",
+    shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 0.1,
+    shadowRadius: 3,
+    elevation: 2,
+  },
+  resetDbBtnText: {
+    color: "#ffffff",
+    fontSize: 13,
+    fontWeight: "700",
+  },
+  pressed: {
+    opacity: 0.85,
   },
   tableSelector: {
     flexDirection: "row",
