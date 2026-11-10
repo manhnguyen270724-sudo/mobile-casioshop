@@ -4,6 +4,7 @@ import { formatPrice, parsePrice } from "@/database/products";
 import { Product } from "@/types/store";
 import { Ionicons } from "@expo/vector-icons";
 import { router } from "expo-router";
+import React, { useEffect, useState } from "react";
 import {
   GestureResponderEvent,
   Image,
@@ -15,6 +16,9 @@ import {
   ViewStyle,
 } from "react-native";
 
+const FALLBACK_IMAGE =
+  "https://images.unsplash.com/photo-1524805444758-089113d48a6d?w=700&auto=format&fit=crop&q=80";
+
 interface ProductCardProps {
   product: Product;
   horizontal?: boolean;
@@ -24,6 +28,13 @@ interface ProductCardProps {
 export default function ProductCard({ product, horizontal = false, style }: ProductCardProps) {
   const { addToCart, toggleFavorite, isFavorite } = useStore();
   const favorited = isFavorite(product.id);
+  const [imgUri, setImgUri] = useState<string>(
+    product.img && !product.img.includes("watchstore.vn") ? product.img : FALLBACK_IMAGE
+  );
+
+  useEffect(() => {
+    setImgUri(product.img && !product.img.includes("watchstore.vn") ? product.img : FALLBACK_IMAGE);
+  }, [product.img]);
 
   return (
     <View style={[styles.card, horizontal ? styles.cardHorizontal : styles.cardGrid, style]}>
@@ -35,7 +46,8 @@ export default function ProductCard({ product, horizontal = false, style }: Prod
       >
         <View style={styles.imageContainer}>
           <Image
-            source={{ uri: product.img }}
+            source={{ uri: imgUri }}
+            onError={() => setImgUri(FALLBACK_IMAGE)}
             style={styles.image}
             resizeMode="contain"
           />

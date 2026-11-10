@@ -140,7 +140,7 @@ const SEED_PRODUCTS: Product[] = [
     id: "M1",
     brand: "G-Shock",
     name: "Đồng Hồ Bonest Gatti 47mm Nam BG5606-A2",
-    img: "https://www.watchstore.vn/wp-content/uploads/2023/11/bg5606-a2-1-917313870-1440319181-1712669090-768x768.jpg",
+    img: "https://images.unsplash.com/photo-1524805444758-089113d48a6d?w=700&auto=format&fit=crop&q=80",
     price: "6.197.500₫",
     description: "Thiết kế thể thao góc cạnh, mặt số đa tầng, chống nước 200M, bảo hành 5 năm.",
     rating: 4.9,
@@ -150,7 +150,7 @@ const SEED_PRODUCTS: Product[] = [
     id: "M2",
     brand: "G-Shock",
     name: "Đồng Hồ Bonest Gatti 45mm Nam BG4001-R2",
-    img: "https://www.watchstore.vn/wp-content/uploads/2023/12/bg5804-a2-1-750261156-1218272464-1712669786-768x768.jpg",
+    img: "https://images.unsplash.com/photo-1587836374828-4dbafa94cf0e?w=700&auto=format&fit=crop&q=80",
     price: "6.448.750₫",
     description: "Bộ vỏ carbon siêu bền bỉ, chống sốc tuyệt đối, kính khoáng cường lực Mineral Glass.",
     rating: 4.8,
@@ -160,7 +160,7 @@ const SEED_PRODUCTS: Product[] = [
     id: "M3",
     brand: "G-Shock",
     name: "Đồng Hồ Casio 51mm Nam GA-110GB-1ADR",
-    img: "https://www.watchstore.vn/wp-content/uploads/2020/11/ga-110gb-1adr-1995959558-852531344-1712563990-768x768.jpg",
+    img: "https://images.unsplash.com/photo-1539185441755-769473a23570?w=700&auto=format&fit=crop&q=80",
     price: "4.066.400₫",
     description: "Phiên bản Black & Gold huyền thoại, tích hợp đèn LED Auto Light, bấm giờ 1/1000s.",
     rating: 5.0,
@@ -170,7 +170,7 @@ const SEED_PRODUCTS: Product[] = [
     id: "M4",
     brand: "G-Shock",
     name: "Đồng Hồ Casio 45mm Nam MTP-VD01L-1EVUDF",
-    img: "https://www.watchstore.vn/wp-content/uploads/2021/05/1-khung-sp-1274501040-1790641903-1712568185-768x768.jpg",
+    img: "https://images.unsplash.com/photo-1546868871-7041f2a55e12?w=700&auto=format&fit=crop&q=80",
     price: "945.600₫",
     description: "Dây da thanh lịch, hiển thị ngày tại vị trí 3 giờ, chống nước 50M tiêu chuẩn hằng ngày.",
     rating: 4.7,
@@ -180,7 +180,7 @@ const SEED_PRODUCTS: Product[] = [
     id: "M5",
     brand: "Citizen",
     name: "Đồng Hồ Olym Pianus 42mm Nam OP990-45.24ADGK-GL-D",
-    img: "https://www.watchstore.vn/wp-content/uploads/2022/09/op990-45.24adgk-gl-d-1712726130-768x768.jpg",
+    img: "https://images.unsplash.com/photo-1533139502658-0198f920d8e8?w=700&auto=format&fit=crop&q=80",
     price: "7.410.000₫",
     description: "Mặt kính Sapphire nguyên khối chống xước, bộ máy cơ tự động Skeleton lộ tim độc đáo.",
     rating: 4.9,
@@ -190,7 +190,7 @@ const SEED_PRODUCTS: Product[] = [
     id: "M6",
     brand: "Seiko",
     name: "Đồng Hồ Bentley 42mm Nam BL2215-25MWWB-D",
-    img: "https://www.watchstore.vn/wp-content/uploads/2023/08/bl2215-25mwwb-d-1-83794753-385047346-1712665485-768x768.jpg",
+    img: "https://images.unsplash.com/photo-1614164185128-e4ec99c436d7?w=700&auto=format&fit=crop&q=80",
     price: "8.510.000₫",
     description: "Kiểu dáng quý phái, dây kim loại thép không gỉ 316L mạ PVD cao cấp.",
     rating: 4.8,
@@ -200,7 +200,7 @@ const SEED_PRODUCTS: Product[] = [
     id: "M7",
     brand: "Vintage",
     name: "Đồng Hồ SRWatch 40mm Nam SG7004.1101GM",
-    img: "https://www.watchstore.vn/wp-content/uploads/2023/11/sg70041101gm-1-1655623959-1088545011-1712669159-768x768.jpg",
+    img: "https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?w=700&auto=format&fit=crop&q=80",
     price: "3.105.000₫",
     description: "Phong cách Retro cổ điển thập niên 80s, thiết kế mỏng nhẹ ôm trọn cổ tay.",
     rating: 4.7,
@@ -210,7 +210,7 @@ const SEED_PRODUCTS: Product[] = [
     id: "M8",
     brand: "Vintage",
     name: "Đồng Hồ Citizen 43mm Nam AN3600-59L",
-    img: "https://www.watchstore.vn/wp-content/uploads/2020/11/an3600-59l-1712563825-768x768.jpg",
+    img: "https://images.unsplash.com/photo-1508615039623-a25605d2b022?w=700&auto=format&fit=crop&q=80",
     price: "4.320.000₫",
     description: "Mặt số xanh navy cổ điển, 6 kim Chronograph bấm giờ thể thao mạnh mẽ.",
     rating: 4.8,
@@ -220,7 +220,7 @@ const SEED_PRODUCTS: Product[] = [
     id: "M9",
     brand: "Citizen",
     name: "Đồng Hồ Bonest Gatti 42mm Nam BG6003-A3",
-    img: "https://www.watchstore.vn/wp-content/uploads/2023/12/bg5806-a3-1-1876520846-1933878820-1712670101-768x768.jpg",
+    img: "https://images.unsplash.com/photo-1509042239860-f550ce710b93?w=700&auto=format&fit=crop&q=80",
     price: "7.537.500₫",
     description: "Thiết kế thể thao sang trọng, dạ quang phát sáng ban đêm cực rõ nét.",
     rating: 4.9,
@@ -230,7 +230,7 @@ const SEED_PRODUCTS: Product[] = [
     id: "M10",
     brand: "Omega",
     name: "Đồng Hồ Bonest Gatti 46mm Nam BG5501-A4",
-    img: "https://www.watchstore.vn/wp-content/uploads/2023/11/bg5501-a4-1-1977979114-1746612935-1712668784-768x768.jpg",
+    img: "https://images.unsplash.com/photo-1524592094714-0f0654e20314?w=700&auto=format&fit=crop&q=80",
     price: "5.527.500₫",
     description: "Dây cao su tự nhiên cao cấp kháng khuẩn, chống trầy xước, phong cách doanh nhân.",
     rating: 5.0,
@@ -240,7 +240,7 @@ const SEED_PRODUCTS: Product[] = [
     id: "Fm11",
     brand: "Omega",
     name: "Bulova 32mm Nữ 96L273967867",
-    img: "https://www.watchstore.vn/wp-content/uploads/2022/03/96l273-1712581838-400x400.jpg",
+    img: "https://images.unsplash.com/photo-1594576722512-582bcd46fba3?w=700&auto=format&fit=crop&q=80",
     price: "10.612.250₫",
     description: "Đồng hồ nữ đính đá cao cấp phong cách quý phái, thiết kế tinh xảo, chống nước 30M.",
     rating: 4.9,
@@ -250,7 +250,7 @@ const SEED_PRODUCTS: Product[] = [
     id: "Fm12",
     brand: "Citizen",
     name: "Bulova 22mm Nữ 96X136673",
-    img: "https://www.watchstore.vn/wp-content/uploads/2022/11/96x136-1-1700752665-100333105-1712589188-400x400.jpg",
+    img: "https://images.unsplash.com/photo-1526045612212-70caf35c14df?w=700&auto=format&fit=crop&q=80",
     price: "4.250.000₫",
     description: "Kích thước 22mm nhỏ gọn, trang nhã, kính cứng Mineral Crystal chống va đập tốt.",
     rating: 4.8,
@@ -260,7 +260,7 @@ const SEED_PRODUCTS: Product[] = [
     id: "Fm13",
     brand: "Omega",
     name: "Freelook 34mm Nữ FL.1.10049.1",
-    img: "https://www.watchstore.vn/wp-content/uploads/2021/11/fl-661303999-1468444074-1712574475-400x400.jpg",
+    img: "https://images.unsplash.com/photo-1513094735237-8f2714d57c13?w=700&auto=format&fit=crop&q=80",
     price: "1.507.500₫",
     description: "Dây kim loại mạ vàng hồng thanh lịch, mặt số tối giản dễ phối đồ công sở.",
     rating: 4.7,
@@ -270,7 +270,7 @@ const SEED_PRODUCTS: Product[] = [
     id: "Fm14",
     brand: "Omega",
     name: "Ogival 34mm Nữ OG380-451DLW",
-    img: "https://www.watchstore.vn/wp-content/uploads/2022/06/380-451dlw-1-1654585952376-1712585553-400x400.jpg",
+    img: "https://images.unsplash.com/photo-1511367461989-f85a21fda167?w=700&auto=format&fit=crop&q=80",
     price: "9.030.000₫",
     description: "Bộ máy Thụy Sĩ chuẩn xác, viền đính kim cương nhân tạo Swarovski lấp lánh.",
     rating: 5.0,
@@ -280,7 +280,7 @@ const SEED_PRODUCTS: Product[] = [
     id: "Fm15",
     brand: "Omega",
     name: "Versus 36mm Nữ VSP641618",
-    img: "https://www.watchstore.vn/wp-content/uploads/2022/08/vsp641618-1-652387053-684910801-1712587496-400x400.jpg",
+    img: "https://images.unsplash.com/photo-1518131672697-613becd4fab5?w=700&auto=format&fit=crop&q=80",
     price: "4.675.000₫",
     description: "Thương hiệu thời trang Italy, thiết kế cá tính, dây da chính hãng êm ái.",
     rating: 4.8,
@@ -290,7 +290,7 @@ const SEED_PRODUCTS: Product[] = [
     id: "Fm16",
     brand: "Seiko",
     name: "Mido 33mm Nữ M001.230.22.036.91",
-    img: "https://www.watchstore.vn/wp-content/uploads/2023/01/m001-1378360526-1268271006-1712590847-400x400.jpg",
+    img: "https://images.unsplash.com/photo-1612817288484-6f916006741a?w=700&auto=format&fit=crop&q=80",
     price: "14.875.000₫",
     description: "Kính Sapphire chống trầy xước tuyệt đối, mạ vàng PVD demi sang trọng đẳng cấp.",
     rating: 5.0,
@@ -300,7 +300,7 @@ const SEED_PRODUCTS: Product[] = [
     id: "Fm17",
     brand: "Citizen",
     name: "Citizen 30mm Nữ EM0320-59D",
-    img: "https://www.watchstore.vn/wp-content/uploads/2021/07/em0320-59d-1712572339-400x400.jpg",
+    img: "https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=700&auto=format&fit=crop&q=80",
     price: "7.670.000₫",
     description: "Công nghệ năng lượng ánh sáng Eco-Drive không cần thay pin, vỏ thép 316L sáng bóng.",
     rating: 4.9,
@@ -310,7 +310,7 @@ const SEED_PRODUCTS: Product[] = [
     id: "Fm18",
     brand: "Seiko",
     name: "Bentley 34mm Nữ BL2333-10LTDI",
-    img: "https://www.watchstore.vn/wp-content/uploads/2024/03/bl2333-10ltdi-1-75836748-1949570291-1712670901-400x400.jpg",
+    img: "https://images.unsplash.com/photo-1542496658-e33a6d0d50f6?w=700&auto=format&fit=crop&q=80",
     price: "3.478.000₫",
     description: "Thiết kế mặt khảm xà cừ tự nhiên chuyển sắc, dây da trẻ trung hiện đại.",
     rating: 4.7,
@@ -320,7 +320,7 @@ const SEED_PRODUCTS: Product[] = [
     id: "Fm19",
     brand: "Seiko",
     name: "Bulova 32mm Nữ 96L267678",
-    img: "https://www.watchstore.vn/wp-content/uploads/2021/12/96l267-1-924642084-550870592-1712575302-400x400.jpg",
+    img: "https://images.unsplash.com/photo-1508057198894-247b23fe5ade?w=700&auto=format&fit=crop&q=80",
     price: "3.500.000₫",
     description: "Dáng vuông thanh lịch cổ điển, mặt số số La Mã nổi bật, máy pin Nhật Bản.",
     rating: 4.8,
@@ -330,7 +330,7 @@ const SEED_PRODUCTS: Product[] = [
     id: "Fm20",
     brand: "Seiko",
     name: "Freelook 32mm Nữ FL.1.10180.4",
-    img: "https://www.watchstore.vn/wp-content/uploads/2021/11/fl-1825341786-821972922-1712574733-400x400.jpg",
+    img: "https://images.unsplash.com/photo-1619134778706-7015533a6150?w=700&auto=format&fit=crop&q=80",
     price: "1.455.000₫",
     description: "Giá học sinh sinh viên siêu hợp lý, chất liệu hợp kim cao cấp mạ điện phân bền màu.",
     rating: 4.6,
@@ -414,12 +414,34 @@ class MemoryStorage {
         const p = window.localStorage.getItem("casio_products");
         if (p) {
           const loadedProds: Product[] = JSON.parse(p);
-          const existingIds = new Set(loadedProds.map((item) => item.id));
+          // Automatically repair any old/broken watchstore.vn URLs
+          const repaired = loadedProds.map((item) => {
+            if (!item.img || item.img.includes("watchstore.vn")) {
+              const seedMatch = SEED_PRODUCTS.find((sp) => sp.id === item.id);
+              return { ...item, img: seedMatch ? seedMatch.img : SEED_PRODUCTS[0].img };
+            }
+            return item;
+          });
+          const existingIds = new Set(repaired.map((item) => item.id));
           const missingProds = SEED_PRODUCTS.filter((item) => !existingIds.has(item.id));
-          this.products = [...loadedProds, ...missingProds];
+          this.products = [...repaired, ...missingProds];
+          this.saveToWebStorage();
         }
         const o = window.localStorage.getItem("casio_orders");
-        if (o) this.orders = JSON.parse(o);
+        if (o) {
+          const loadedOrders: Order[] = JSON.parse(o);
+          this.orders = loadedOrders.map((ord) => ({
+            ...ord,
+            items: ord.items.map((it) => {
+              if (!it.img || it.img.includes("watchstore.vn")) {
+                const seedMatch = SEED_PRODUCTS.find((sp) => sp.id === it.id);
+                return { ...it, img: seedMatch ? seedMatch.img : SEED_PRODUCTS[0].img };
+              }
+              return it;
+            }),
+          }));
+          this.saveToWebStorage();
+        }
       } catch {
         // use defaults
       }
@@ -538,6 +560,11 @@ class DatabaseManager {
           `INSERT OR IGNORE INTO products (id, brand, name, img, price, description, rating, reviewsCount)
            VALUES (?, ?, ?, ?, ?, ?, ?, ?);`,
           [p.id, p.brand, p.name, p.img, String(p.price), p.description || "", p.rating || 5.0, p.reviewsCount || 0]
+        );
+        // Automatically repair any old/broken watchstore.vn image links in existing databases
+        this.db?.runSync(
+          "UPDATE products SET img = ? WHERE id = ? AND (img LIKE '%watchstore.vn%' OR img IS NULL OR img = '');",
+          [p.img, p.id]
         );
       });
 

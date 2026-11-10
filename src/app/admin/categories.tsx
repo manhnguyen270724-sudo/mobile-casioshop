@@ -103,7 +103,7 @@ export default function AdminCategoriesScreen() {
     setTargetCategory(catName);
     setProdName("");
     setProdPrice("");
-    setProdImg("https://www.watchstore.vn/wp-content/uploads/2023/11/bg5606-a2-1-917313870-1440319181-1712669090-768x768.jpg");
+    setProdImg("https://images.unsplash.com/photo-1524805444758-089113d48a6d?w=700&auto=format&fit=crop&q=80");
     setProdDesc("Đồng hồ thiết kế tinh xảo, chống va đập, bảo hành 5 năm chính hãng.");
     setIsAddProdModalVisible(true);
   };
@@ -124,7 +124,7 @@ export default function AdminCategoriesScreen() {
       name: prodName.trim(),
       brand: targetCategory,
       price: `${priceNum.toLocaleString("vi-VN")}₫`,
-      img: prodImg.trim() || "https://www.watchstore.vn/wp-content/uploads/2020/11/ga-110gb-1adr-1995959558-852531344-1712563990-768x768.jpg",
+      img: prodImg.trim() || "https://images.unsplash.com/photo-1524805444758-089113d48a6d?w=700&auto=format&fit=crop&q=80",
       description: prodDesc.trim(),
     });
 

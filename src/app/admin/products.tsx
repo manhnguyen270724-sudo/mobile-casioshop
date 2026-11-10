@@ -19,6 +19,9 @@ import {
   View,
 } from "react-native";
 
+const FALLBACK_IMAGE =
+  "https://images.unsplash.com/photo-1524805444758-089113d48a6d?w=700&auto=format&fit=crop&q=80";
+
 export default function AdminProductsScreen() {
   const { products, categories, addProduct, updateProduct, deleteProduct } =
     useStore();
@@ -63,7 +66,7 @@ export default function AdminProductsScreen() {
     setAddName("");
     setAddBrand(categories[0] || "G-Shock");
     setAddPrice("");
-    setAddImg("https://www.watchstore.vn/wp-content/uploads/2020/11/ga-110gb-1adr-1995959558-852531344-1712563990-768x768.jpg");
+    setAddImg("https://images.unsplash.com/photo-1524805444758-089113d48a6d?w=700&auto=format&fit=crop&q=80");
     setAddDesc("Đồng hồ chính hãng Casio, kính khoáng, kháng nước 200M.");
     setIsAddModalVisible(true);
   };
@@ -85,7 +88,7 @@ export default function AdminProductsScreen() {
       name: addName.trim(),
       brand: addBrand.trim() || "G-Shock",
       price: `${priceNum.toLocaleString("vi-VN")}₫`,
-      img: addImg.trim() || "https://www.watchstore.vn/wp-content/uploads/2020/11/ga-110gb-1adr-1995959558-852531344-1712563990-768x768.jpg",
+      img: addImg.trim() || "https://images.unsplash.com/photo-1524805444758-089113d48a6d?w=700&auto=format&fit=crop&q=80",
       description: addDesc.trim(),
     });
 
@@ -225,7 +228,11 @@ export default function AdminProductsScreen() {
         }
         renderItem={({ item }) => (
           <View style={styles.productCard}>
-            <Image source={{ uri: item.img }} style={styles.productImg} resizeMode="contain" />
+            <Image
+              source={{ uri: item.img && !item.img.includes("watchstore.vn") ? item.img : FALLBACK_IMAGE }}
+              style={styles.productImg}
+              resizeMode="contain"
+            />
 
             <View style={styles.productInfo}>
               <View style={styles.brandRow}>

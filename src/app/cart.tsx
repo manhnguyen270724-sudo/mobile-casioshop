@@ -17,6 +17,9 @@ import {
   View,
 } from "react-native";
 
+const FALLBACK_IMAGE =
+  "https://images.unsplash.com/photo-1524805444758-089113d48a6d?w=700&auto=format&fit=crop&q=80";
+
 export default function CartScreen() {
   const {
     cart,
@@ -91,7 +94,9 @@ export default function CartScreen() {
                   style={styles.itemImageContainer}
                 >
                   <Image
-                    source={{ uri: item.img }}
+                    source={{
+                      uri: item.img && !item.img.includes("watchstore.vn") ? item.img : FALLBACK_IMAGE,
+                    }}
                     style={styles.itemImage}
                     resizeMode="contain"
                   />

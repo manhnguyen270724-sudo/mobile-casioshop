@@ -17,12 +17,18 @@ import {
 } from "react-native";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 
+const FALLBACK_IMAGE =
+  "https://images.unsplash.com/photo-1524805444758-089113d48a6d?w=700&auto=format&fit=crop&q=80";
+
 export default function ProductScreen() {
   const { id } = useLocalSearchParams<{ id?: string }>();
   const insets = useSafeAreaInsets();
   const { products: storeProducts, addToCart, toggleFavorite, isFavorite } = useStore();
   const product = storeProducts.find((p) => p.id === id) || getProduct(id);
   const [quantity, setQuantity] = useState(1);
+  const [imgUri, setImgUri] = useState<string>(
+    product?.img && !product.img.includes("watchstore.vn") ? product.img : FALLBACK_IMAGE
+  );
 
   if (!product) {
     return (
@@ -67,7 +73,8 @@ export default function ProductScreen() {
         {/* Product Image Area */}
         <View style={styles.imageCard}>
           <Image
-            source={{ uri: product.img }}
+            source={{ uri: imgUri }}
+            onError={() => setImgUri(FALLBACK_IMAGE)}
             style={styles.image}
             resizeMode="contain"
           />
