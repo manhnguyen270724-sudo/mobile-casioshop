@@ -29,7 +29,7 @@
 
 ### 1. Trang Chủ & Bộ Sưu Tập Đồng Hồ Khởi Tạo
 - **Mã nguồn:** `src/app/index.tsx`, `src/database/sqlite.ts`
-- **Mô tả:** Cơ sở dữ liệu SQLite khởi tạo sẵn 17 mẫu đồng hồ chính hãng từ các dòng nổi tiếng: G-Shock, Citizen, Seiko, Vintage, Omega, Edifice với thông số và giá niêm yết rõ ràng.
+- **Mô tả:** Cơ sở dữ liệu SQLite khởi tạo sẵn 25 mẫu đồng hồ chính hãng từ các dòng nổi tiếng: G-Shock, Citizen, Seiko, Vintage, Omega, Edifice với thông số và giá niêm yết rõ ràng.
 - **Minh họa giao diện:**
   
   ![Trang chủ người dùng](./screenshots/A1_trang_chu.png)
@@ -175,7 +175,7 @@
 
 ### 17. Bảng Điều Khiển Quản Trị Tổng Quan (Admin Dashboard)
 - **Mã nguồn:** `src/app/admin/index.tsx`
-- **Mô tả:** Trung tâm điều hành dành cho quản trị viên, hiển thị số liệu thống kê thời gian thực: Tổng người dùng (10), Loại sản phẩm (6), Sản phẩm trong kho (17), Đơn hàng (2) cùng các menu điều hướng nhanh.
+- **Mô tả:** Trung tâm điều hành dành cho quản trị viên, hiển thị số liệu thống kê thời gian thực: Tổng người dùng (10), Loại sản phẩm (6), Sản phẩm trong kho (25), Đơn hàng (2) cùng các menu điều hướng nhanh.
 - **Minh họa giao diện:**
   
   ![Bảng điều khiển quản trị](./screenshots/B3_trang_chu_admin.png)
