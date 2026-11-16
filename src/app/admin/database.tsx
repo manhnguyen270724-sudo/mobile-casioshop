@@ -363,7 +363,7 @@ const styles = StyleSheet.create({
     elevation: 2,
   },
   tableTabText: {
-    fontSize: 11,
+    fontSize: 13,
     fontWeight: "700",
     color: "#6a737d",
   },
@@ -382,7 +382,7 @@ const styles = StyleSheet.create({
   },
   countBadgeText: {
     color: "#4a5568",
-    fontSize: 10,
+    fontSize: 11,
     fontWeight: "800",
   },
   countBadgeTextActive: {
@@ -398,16 +398,16 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     alignItems: "center",
     backgroundColor: "#ffffff",
-    borderWidth: 1,
-    borderColor: "#e4dfd5",
-    borderRadius: 8,
-    paddingHorizontal: 10,
-    height: 38,
+    borderWidth: 1.5,
+    borderColor: "#cbd5e1",
+    borderRadius: 10,
+    paddingHorizontal: 12,
+    height: 44,
     gap: 8,
   },
   searchInput: {
     flex: 1,
-    fontSize: 12,
+    fontSize: 14,
     color: "#162536",
   },
   viewModeBtn: {
@@ -415,14 +415,14 @@ const styles = StyleSheet.create({
     alignItems: "center",
     gap: 6,
     backgroundColor: "#ffffff",
-    borderWidth: 1,
-    borderColor: "#e4dfd5",
-    borderRadius: 8,
-    paddingHorizontal: 12,
-    height: 38,
+    borderWidth: 1.5,
+    borderColor: "#cbd5e1",
+    borderRadius: 10,
+    paddingHorizontal: 14,
+    height: 44,
   },
   viewModeText: {
-    fontSize: 11,
+    fontSize: 13,
     fontWeight: "800",
     color: "#0b1f33",
   },
@@ -430,8 +430,8 @@ const styles = StyleSheet.create({
     marginBottom: 10,
   },
   summaryText: {
-    fontSize: 12,
-    color: "#6a737d",
+    fontSize: 13.5,
+    color: "#475569",
   },
   summaryBold: {
     fontWeight: "800",
@@ -472,13 +472,13 @@ const styles = StyleSheet.create({
     borderRadius: 6,
   },
   rowIdText: {
-    fontSize: 11,
+    fontSize: 13,
     fontWeight: "800",
     color: "#1f2937",
   },
   pillMini: {
     paddingHorizontal: 8,
-    paddingVertical: 2,
+    paddingVertical: 3,
     borderRadius: 6,
   },
   pillAdmin: {
@@ -494,26 +494,26 @@ const styles = StyleSheet.create({
     backgroundColor: "#dcfce7",
   },
   pillMiniText: {
-    fontSize: 9,
+    fontSize: 11,
     fontWeight: "800",
     color: "#1f2937",
   },
   rowFields: {
-    gap: 4,
+    gap: 5,
   },
   fieldLine: {
     flexDirection: "row",
     gap: 6,
   },
   fieldKey: {
-    fontSize: 11,
+    fontSize: 13,
     fontWeight: "700",
     color: "#64748b",
-    width: 85,
+    width: 95,
   },
   fieldVal: {
     flex: 1,
-    fontSize: 11,
+    fontSize: 13.5,
     color: "#1e293b",
     fontWeight: "500",
   },
@@ -525,8 +525,8 @@ const styles = StyleSheet.create({
   rawText: {
     color: "#38bdf8",
     fontFamily: Platform.OS === "ios" ? "Courier" : "monospace",
-    fontSize: 11,
-    lineHeight: 16,
+    fontSize: 12.5,
+    lineHeight: 18,
   },
   emptyBox: {
     alignItems: "center",
@@ -534,7 +534,7 @@ const styles = StyleSheet.create({
     paddingVertical: 40,
   },
   emptyText: {
-    fontSize: 13,
+    fontSize: 14,
     color: "#8a96a3",
     marginTop: 8,
   },
