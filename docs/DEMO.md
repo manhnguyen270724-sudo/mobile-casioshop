@@ -230,8 +230,8 @@
 ## 🛠️ Kiến Trúc Công Nghệ
 
 - **Framework:** React Native `0.88.1` / React `19.3.0`
-- **CLI & Platform:** Expo SDK `~58.0.23`
-- **Routing:** Expo Router `~58.0.30` (File-based navigation)
-- **Database:** SQLite (`expo-sqlite ~58.0.15`)
+- **CLI & Platform:** Expo SDK `~58.0.25`
+- **Routing:** Expo Router `~58.0.31` (File-based navigation)
+- **Database:** SQLite (`expo-sqlite ~58.0.17`)
 - **Icons & Styling:** `@expo/vector-icons` (Ionicons), StyleSheet API với Design System đồng bộ
 - **Quản lý State:** React Context API (`StoreContext`) kết hợp SQLite Web/Native Adapter

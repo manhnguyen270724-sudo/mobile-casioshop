@@ -53,8 +53,8 @@
 
 - **Ngôn ngữ:** TypeScript 100%
 - **Giao diện di động:** React Native `0.88.1`, React `19.3.0`
-- **Điều hướng (Navigation):** `expo-router ~58.0.30` (File-based Routing theo cấu trúc thư mục `src/app/`)
-- **Cơ sở dữ liệu:** `expo-sqlite ~58.0.15` (Lưu trữ cục bộ với 4 bảng: `products`, `categories`, `users`, `orders`)
+- **Điều hướng (Navigation):** `expo-router ~58.0.31` (File-based Routing theo cấu trúc thư mục `src/app/`)
+- **Cơ sở dữ liệu:** `expo-sqlite ~58.0.17` (Lưu trữ cục bộ với 4 bảng: `products`, `categories`, `users`, `orders`)
 - **Biểu tượng (Icons):** `@expo/vector-icons` (Bộ icon chuẩn Ionicons)
 - **Hoạt họa & Cử chỉ:** `react-native-reanimated 4.7.1`, `react-native-gesture-handler ~3.3.0`
 - **Tối ưu hiển thị:** `react-native-safe-area-context ~5.11.1`, `react-native-screens ~4.30.0`
