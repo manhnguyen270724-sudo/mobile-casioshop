@@ -30,14 +30,60 @@ export function StoreProvider({ children }: { children: ReactNode }) {
   const [orders, setOrders] = useState<Order[]>([]);
 
   // User session
-  const [user, setUser] = useState<User | null>(null);
+  const [user, setUser] = useState<User | null>(() => {
+    if (typeof window !== "undefined" && window.localStorage) {
+      try {
+        const saved = window.localStorage.getItem("casio_current_user");
+        if (saved) return JSON.parse(saved);
+      } catch (e) {}
+    }
+    return null;
+  });
 
   // Cart & Favorites
-  const [cart, setCart] = useState<CartItem[]>([]);
+  const [cart, setCart] = useState<CartItem[]>(() => {
+    if (typeof window !== "undefined" && window.localStorage) {
+      try {
+        const saved = window.localStorage.getItem("casio_cart");
+        if (saved) return JSON.parse(saved);
+      } catch (e) {}
+    }
+    return [
+      {
+        id: "M3",
+        brand: "G-Shock",
+        name: "Đồng Hồ G-Shock GA-110-1BDR Nam Dây Nhựa",
+        price: "4.350.000₫",
+        img: "https://casio.anhkhue.com/storage/products/1-1-ga-110-1bdr-1.jpg",
+        description: "Mẫu đồng hồ G-Shock chống va đập huyền thoại với thiết kế mặt đa tầng.",
+        quantity: 1,
+      },
+    ];
+  });
   const [favorites, setFavorites] = useState<string[]>(["M1", "M3"]);
   const [discountCode, setDiscountCode] = useState<string>("");
   const [discountPercent, setDiscountPercent] = useState<number>(0);
   const [lastOrder, setLastOrder] = useState<Order | null>(null);
+
+  useEffect(() => {
+    if (typeof window !== "undefined" && window.localStorage) {
+      try {
+        if (user) {
+          window.localStorage.setItem("casio_current_user", JSON.stringify(user));
+        } else {
+          window.localStorage.removeItem("casio_current_user");
+        }
+      } catch (e) {}
+    }
+  }, [user]);
+
+  useEffect(() => {
+    if (typeof window !== "undefined" && window.localStorage) {
+      try {
+        window.localStorage.setItem("casio_cart", JSON.stringify(cart));
+      } catch (e) {}
+    }
+  }, [cart]);
 
   // Initialize from SQLite Database
   useEffect(() => {
