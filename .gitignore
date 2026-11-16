@@ -45,3 +45,6 @@ example
 # IDEs
 .idea/
 .vscode/
+
+# Local grading sheet (keep private locally)
+docs/PHIEU_CHAM_DIEM.md

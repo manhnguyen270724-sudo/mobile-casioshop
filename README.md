@@ -1,83 +1,137 @@
-# CASIO STORE - DỰ ÁN LẬP TRÌNH DI ĐỘNG 2 (90T)
+# ⌚ CASIO WATCH STORE - REACT NATIVE MOBILE APP
 
-Ứng dụng di động thương mại điện tử **Casio Official Store** xây dựng bằng **React Native (Expo SDK 58)**, sử dụng cơ sở dữ liệu **SQLite** cục bộ, điều hướng bằng **Expo Router** và hỗ trợ phân quyền người dùng / quản trị viên (Admin).
+> Ứng dụng di động thương mại điện tử chuyên nghiệp dành cho hệ thống phân phối đồng hồ Casio chính hãng, phát triển bằng **React Native (Expo SDK 58)**, cơ sở dữ liệu **SQLite** cục bộ tốc độ cao và hệ thống điều hướng chuẩn tệp tin **Expo Router**.
 
----
-
-## 📌 THÔNG TIN ĐỒ ÁN & PHIẾU CHẤM ĐIỂM
-
-- **Môn học:** Lập trình di động 2 (90T)
-- **Link Git Repository:** [https://github.com/manhnguyen270724-sudo/mobile-casioshop](https://github.com/manhnguyen270724-sudo/mobile-casioshop)
-- **Môi trường phát triển:**
-  - **React Native:** `0.88.1`
-  - **React:** `19.3.0`
-  - **Expo SDK:** `~58.0.23`
-  - **Expo Router:** `~58.0.30`
-  - **Expo SQLite:** `~58.0.15`
-  - **Ngôn ngữ:** TypeScript 100%
+[![Expo SDK](https://img.shields.io/badge/Expo-SDK_58-000020.svg?style=flat-square&logo=expo)](https://expo.dev)
+[![React Native](https://img.shields.io/badge/React_Native-0.88.1-61dafb.svg?style=flat-square&logo=react)](https://reactnative.dev)
+[![TypeScript](https://img.shields.io/badge/TypeScript-5.x-3178C6.svg?style=flat-square&logo=typescript)](https://www.typescriptlang.org)
+[![SQLite](https://img.shields.io/badge/Database-SQLite-003B57.svg?style=flat-square&logo=sqlite)](https://docs.expo.dev/versions/latest/sdk/sqlite/)
+[![License](https://img.shields.io/badge/License-MIT-green.svg?style=flat-square)](LICENSE)
 
 ---
 
-## 🔑 TÀI KHOẢN TRẢI NGHIỆM & CHẤM ĐIỂM
+## 📱 TỔNG QUAN DỰ ÁN
 
-| Vai trò | Tên đăng nhập (Username) | Mật khẩu (Password) | Chức năng nổi bật |
+**Casio Watch Store** là ứng dụng di động hoàn chỉnh phục vụ nhu cầu mua sắm đồng hồ và quản trị cửa hàng:
+
+- **Dành cho Khách hàng:** Khám phá danh mục đồng hồ phong phú (G-Shock, Citizen, Seiko, Edifice, Vintage, Omega), bộ lọc phân tầng thông minh, xem chi tiết thông số kỹ thuật chống nước 20ATM, mặt kính khoáng/sapphire, giỏ hàng tương tác, đặt hàng giao hỏa tốc 2H, quản lý hồ sơ và lịch sử đơn hàng.
+- **Dành cho Quản trị viên (Admin):** Bảng điều khiển quản trị tổng quan (Dashboard), quản lý phân quyền thành viên (Admin/User), quản trị danh mục sản phẩm, quản lý kho hàng sản phẩm toàn diện (CRUD) và xử lý luân chuyển tình trạng đơn hàng.
+
+📖 **Tài liệu Demo chi tiết:** [Xem chi tiết toàn bộ 22 màn hình chức năng tại docs/DEMO.md](./docs/DEMO.md)
+
+---
+
+## 🔑 TÀI KHOẢN TRẢI NGHIỆM DEMO
+
+| Vai trò | Tên đăng nhập (Username) | Mật khẩu (Password) | Giao diện điều hướng |
 | :--- | :--- | :--- | :--- |
-| **Quản trị viên (Admin)** | `admin` *(hoặc `admin@example.com`)* | `admin123` | Vào thẳng **Trang chủ quản trị** (`/admin`), Bottom Tab 4 nút, Quản lý User, Quản lý Loại sản phẩm, Quản lý Sản phẩm, Quản lý Đơn hàng, Trình xem SQLite CSDL. |
-| **Khách hàng (User)** | `user1` *(hoặc `user1@example.com`)* | `user123` | Vào **Trang chủ người dùng** (`/`), Bottom Tab 3 nút, Lọc theo danh mục/giá, Xem chi tiết, Giỏ hàng, Checkout, Lịch sử mua hàng, Cập nhật thông tin cá nhân. |
-| **Đăng ký tài khoản mới** | Tạo bất kỳ qua tab **Sign up** | >= 6 ký tự | Kiểm tra validate họ tên, email, SĐT 10 số, lưu vào bảng `users` trong SQLite và tự động đăng nhập. |
+| **Quản trị viên (Admin)** | `admin` *(hoặc `admin@example.com`)* | `admin123` | Vào thẳng **Trang chủ quản trị** (`/admin`), Bottom Tab 4 nút, toàn quyền quản trị hệ thống. |
+| **Khách hàng (User)** | `user1` *(hoặc `user1@example.com`)* | `user123` | Vào **Trang chủ mua sắm** (`/`), Bottom Tab 3 nút, sẵn có lịch sử đơn hàng và điểm tích lũy VIP GOLD. |
+| **Đăng ký tài khoản mới** | Tạo bất kỳ qua tab **Sign up** | >= 6 ký tự | Tự động kiểm tra tính hợp lệ dữ liệu và lưu vào bảng `users` trong SQLite. |
 
 ---
 
-## 📋 BẢNG CHẤM ĐIỂM TỔNG HỢP (10/10 ĐIỂM)
+## 📸 HÌNH ẢNH DEMO NỔI BẬT
 
-### A. Chức năng của người dùng (4.0đ)
-1. **Trang chủ người dùng (0.25đ):** Hiển thị danh sách sản phẩm có sẵn khi khởi tạo CSDL SQLite (`src/app/index.tsx`).
-2. **Banner và Menu điều hướng (0.25đ):** Gồm 2 nút điều hướng `Home`, `Danh mục sản phẩm` và Banner quảng cáo tự động trượt (`src/components/banner-slider.tsx`).
-3. **Xem sản phẩm theo từng danh mục (0.5đ):** Component `src/components/CategorySelector.tsx` cho phép chọn từng hãng: G-Shock, Citizen, Seiko, Vintage, Omega, Edifice.
-4. **Trang chi tiết sản phẩm (0.25đ):** Click vào sản phẩm mở màn hình chi tiết với hình ảnh, thông số kỹ thuật, giá, đánh giá và nút thêm vào giỏ (`src/app/product.tsx`).
-5. **Bottom Tab ở trang chủ (0.25đ):** Gồm đúng 3 nút: **Home**, **Sign up**, **Login** (`src/components/bottom-nav.tsx`).
-6. **Đăng ký thành công (0.5đ):** Form đăng ký với kiểm tra tính hợp lệ dữ liệu, lưu vào SQLite bảng `users` (`src/components/auth/RegisterForm.tsx`).
-7. **Đăng nhập ở Bottom Tab (0.5đ):** Đăng nhập thành công điều hướng ngay về trang chủ người dùng (`src/components/auth/LoginForm.tsx`).
-8. **Hiển thị thông tin người dùng và Đăng xuất (0.5đ):** Component `src/components/Header.tsx` hiển thị huy hiệu thành viên, tên người dùng và nút Đăng xuất kèm Modal xác nhận.
-9. **Tìm kiếm theo tên/danh mục (0.5đ):** Tìm kiếm tức thì theo tên đồng hồ hoặc thương hiệu.
-10. **Lọc sản phẩm theo khoảng giá (0.5đ):** 5 mức giá: `< 3 Tr`, `3 - 6 Tr`, `6 - 10 Tr`, `> 10 Tr` và `Tất cả`.
+| Trang Chủ Người Dùng | Bảng Điều Khiển Quản Trị |
+| :---: | :---: |
+| ![Trang chủ người dùng](./docs/screenshots/A1_trang_chu.png) | ![Trang chủ quản trị](./docs/screenshots/B3_trang_chu_admin.png) |
 
-### B. Chức năng của admin (4.0đ)
-1. **Khởi tạo database với 1 tài khoản admin có sẵn (0.25đ):** Seed sẵn tài khoản `admin` / `admin123` trong SQLite (`src/database/sqlite.ts`).
-2. **Đăng nhập admin (0.5đ):** Đăng nhập thành công chuyển hướng đến **Trang chủ quản trị** (`/admin`), Header hiển thị `ADMIN`.
-3. **Trang chủ quản trị (0.25đ):** Gồm các nút: Quản lý user, Quản lý loại sản phẩm, Quản lý sản phẩm (`src/app/admin/index.tsx`).
-4. **Admin Bottom Tab (0.5đ):** Gồm 4 nút: **Home của user**, **Home của admin**, **Signup**, **Login** (`src/components/bottom-nav.tsx`).
-5. **Quản trị user (0.5đ):** Xem danh sách, cập nhật vai trò (admin <-> user), xóa user (`src/app/admin/users.tsx`).
-6. **Quản trị loại sản phẩm (1.0đ):**
-   - Xem, thêm, sửa, xóa loại sản phẩm (0.5đ).
-   - Thêm sản phẩm cho loại tương ứng (0.5đ) (`src/app/admin/categories.tsx`).
-7. **Quản trị sản phẩm (1.0đ):** Xem toàn bộ kho hàng, thêm sản phẩm mới, chỉnh sửa thông tin, xóa sản phẩm (`src/app/admin/products.tsx`).
+| Chi Tiết Sản Phẩm | Giỏ Hàng & Thanh Toán |
+| :---: | :---: |
+| ![Chi tiết sản phẩm](./docs/screenshots/A4_chi_tiet_san_pham.png) | ![Giỏ hàng](./docs/screenshots/C1_1_gio_hang.png) |
 
-### C. Chức năng khác (2.0đ)
-1. **Chức năng khác của người dùng (1.5đ):**
-   - Xem và cập nhật giỏ hàng: tăng/giảm số lượng, xóa sản phẩm, nhập mã giảm giá `CASIO10` (0.5đ) (`src/app/cart.tsx`).
-   - Checkout đơn hàng và Đặt hàng: nhập địa chỉ, phương thức thanh toán, hoàn tất đơn (0.5đ) (`src/app/checkout.tsx`).
-   - Xem lịch sử mua hàng: theo dõi các đơn hàng đã mua và trạng thái (0.25đ) (`src/app/profile.tsx`).
-   - Cập nhật thông tin người dùng: đổi tên, số điện thoại, địa chỉ (0.25đ) (`src/app/profile.tsx`).
-2. **Chức năng khác của admin (0.5đ):**
-   - Quản trị đơn hàng: xem danh sách đơn đặt hàng của khách, cập nhật tình trạng giao hàng (`src/app/admin/orders.tsx`).
+| Quản Trị Kho Sản Phẩm | Quản Lý Đơn Hàng |
+| :---: | :---: |
+| ![Quản trị sản phẩm](./docs/screenshots/B7_quan_tri_san_pham.png) | ![Quản trị đơn hàng](./docs/screenshots/C2_quan_tri_don_hang.png) |
+
+> 💡 *Xem đầy đủ 22 ảnh chụp màn hình và mô tả kỹ thuật tại [docs/DEMO.md](./docs/DEMO.md).*
 
 ---
 
-## 🚀 HƯỚNG DẪN CÀI ĐẶT & KHỞI CHẠY
+## 🛠️ CÔNG NGHỆ & KIẾN TRÚC ỨNG DỤNG
 
+- **Ngôn ngữ:** TypeScript 100%
+- **Giao diện di động:** React Native `0.88.1`, React `19.3.0`
+- **Điều hướng (Navigation):** `expo-router ~58.0.30` (File-based Routing theo cấu trúc thư mục `src/app/`)
+- **Cơ sở dữ liệu:** `expo-sqlite ~58.0.15` (Lưu trữ cục bộ với 4 bảng: `products`, `categories`, `users`, `orders`)
+- **Biểu tượng (Icons):** `@expo/vector-icons` (Bộ icon chuẩn Ionicons)
+- **Hoạt họa & Cử chỉ:** `react-native-reanimated 4.7.1`, `react-native-gesture-handler ~3.3.0`
+- **Tối ưu hiển thị:** `react-native-safe-area-context ~5.11.1`, `react-native-screens ~4.30.0`
+- **Nền tảng hỗ trợ:** Android, iOS (qua Expo Go / Development Build) và Web Browser
+
+---
+
+## 🚀 HƯỚNG DẪN CÀI ĐẶT & CHẠY ỨNG DỤNG
+
+### 1. Yêu cầu môi trường
+- Đã cài đặt **Node.js** (khuyến nghị phiên bản LTS 18.x, 20.x hoặc mới hơn).
+- Đã cài đặt ứng dụng **Expo Go** trên thiết bị di động (Android trên CH Play hoặc iOS trên App Store) nếu muốn chạy trên điện thoại thật.
+
+### 2. Cài đặt các gói phụ thuộc
 ```bash
-# 1. Clone repository
+# Clone mã nguồn
 git clone https://github.com/manhnguyen270724-sudo/mobile-casioshop.git
 cd mobile-casioshop
 
-# 2. Cài đặt thư viện phụ thuộc
+# Cài đặt dependencies
 npm install
+```
 
-# 3. Khởi chạy ứng dụng
+### 3. Khởi chạy ứng dụng
+```bash
+# Chạy máy chủ phát triển Expo
 npx expo start
 ```
 
-- Bấm `a` để mở trên Android Emulator.
-- Bấm `w` để mở và chạy thử trực tiếp trên Web Browser.
-- Quét mã QR bằng ứng dụng Expo Go trên điện thoại thật.
+- **Chạy trên điện thoại thật:** Mở ứng dụng **Expo Go**, quét mã QR hiển thị trên màn hình terminal.
+- **Chạy trên trình duyệt Web:** Nhấn phím `w` trên terminal (hoặc chạy lệnh `npx expo start --web`).
+- **Chạy trên Android Emulator:** Nhấn phím `a` trên terminal (yêu cầu đã cấu hình Android Studio SDK).
+
+### 4. Kiểm tra kiểu dữ liệu TypeScript
+```bash
+npx tsc --noEmit
+```
+
+---
+
+## 📂 CẤU TRÚC THƯ MỤC DỰ ÁN
+
+```text
+mobile-casioshop/
+├── docs/                      # Tài liệu demo và ảnh chụp màn hình
+│   ├── DEMO.md               # Bản thuyết minh demo chi tiết 22 chức năng
+│   └── screenshots/          # Bộ 22 ảnh chụp giao diện mobile chất lượng cao
+├── src/
+│   ├── app/                  # Các màn hình điều hướng (Expo Router)
+│   │   ├── _layout.tsx       # Root layout và cấu hình nhà cung cấp dữ liệu
+│   │   ├── index.tsx         # Trang chủ khách hàng
+│   │   ├── product.tsx       # Chi tiết sản phẩm
+│   │   ├── cart.tsx          # Giỏ hàng
+│   │   ├── checkout.tsx      # Thanh toán và đặt hàng
+│   │   ├── profile.tsx       # Hồ sơ cá nhân và lịch sử đơn hàng
+│   │   ├── auth.tsx          # Đăng nhập & Đăng ký
+│   │   └── admin/            # Phân hệ quản trị viên (Admin)
+│   │       ├── index.tsx     # Bảng điều khiển quản trị
+│   │       ├── users.tsx     # Quản trị người dùng
+│   │       ├── categories.tsx# Quản trị loại sản phẩm
+│   │       ├── products.tsx  # Quản trị kho sản phẩm
+│   │       ├── orders.tsx    # Quản trị đơn hàng
+│   │       └── database.tsx  # Trình duyệt CSDL SQLite
+│   ├── components/           # Các thành phần giao diện tái sử dụng
+│   ├── context/              # Quản lý State toàn cục (StoreContext)
+│   ├── database/             # Dịch vụ thao tác CSDL SQLite (sqlite.ts)
+│   ├── constants/            # Định nghĩa màu sắc thương hiệu (theme.ts)
+│   └── types/                # Khai báo TypeScript types / interfaces
+├── app.json                  # Cấu hình dự án Expo
+├── metro.config.js           # Cấu hình đóng gói Metro Bundler
+└── package.json              # Thông tin phiên bản và gói thư viện
+```
+
+---
+
+## 👤 THÔNG TIN SINH VIÊN
+
+- **Họ và tên:** Nguyễn Mạnh  
+- **Lớp:** 24PNV1A  
+- **GitHub:** [https://github.com/manhnguyen270724-sudo/mobile-casioshop](https://github.com/manhnguyen270724-sudo/mobile-casioshop)
