@@ -2,7 +2,7 @@ import { Order, OrderStatus, Product, User } from "@/types/store";
 import * as SQLite from "expo-sqlite";
 import { Platform } from "react-native";
 
-// Initial seed data
+// Dữ liệu mẫu người dùng - nạp sẵn vào SQLite khi chạy app lần đầu
 const SEED_USERS: User[] = [
   {
     id: "u-1",
@@ -126,6 +126,7 @@ const SEED_USERS: User[] = [
   },
 ];
 
+// Danh mục đồng hồ mặc định
 const SEED_CATEGORIES: string[] = [
   "G-Shock",
   "Citizen",
@@ -527,7 +528,7 @@ class DatabaseManager {
     try {
       this.db = SQLite.openDatabaseSync("casio_store.db");
 
-      // 1. Create Tables
+      // Tạo cấu trúc 4 bảng chính trong SQLite: users, categories, products, orders
       this.db.execSync(`
         PRAGMA journal_mode = WAL;
         

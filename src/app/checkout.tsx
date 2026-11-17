@@ -1,4 +1,7 @@
+// Màn hình thanh toán & đặt hàng: thông tin nhận hàng, phương thức vận chuyển, thanh toán VietQR/MoMo/COD
+
 import Header from "@/components/Header";
+import PaymentQRModal from "@/components/PaymentQRModal";
 import { CasioColors } from "@/constants/theme";
 import { useStore } from "@/context/StoreContext";
 import { formatPrice } from "@/database/products";
@@ -29,6 +32,8 @@ export default function CheckoutScreen() {
   const [note, setNote] = useState("");
   const [paymentMethod, setPaymentMethod] = useState<"cod" | "bank" | "momo">("cod");
   const [shippingMethod, setShippingMethod] = useState<"standard" | "express">("standard");
+  const [showQRModal, setShowQRModal] = useState(false);
+  const [pendingOrderId, setPendingOrderId] = useState("");
 
   const actualShippingFee =
     shippingMethod === "express" ? shippingFee + 30000 : shippingFee;
@@ -48,6 +53,15 @@ export default function CheckoutScreen() {
       return;
     }
 
+    // Nếu chọn thanh toán chuyển khoản ngân hàng hoặc ví MoMo -> Kích hoạt VietQR thật
+    if (paymentMethod === "bank" || paymentMethod === "momo") {
+      const generatedId = `CASIO-${Math.floor(100000 + Math.random() * 900000)}`;
+      setPendingOrderId(generatedId);
+      setShowQRModal(true);
+      return;
+    }
+
+    // Nếu chọn thanh toán khi nhận hàng (COD)
     const order = placeOrder({
       customerName: name,
       phone,
@@ -56,7 +70,30 @@ export default function CheckoutScreen() {
       note,
       paymentMethod,
       shippingMethod,
-      finalTotal,
+      total: finalTotal,
+      status: "Chờ xác nhận",
+    });
+
+    router.replace({
+      pathname: "/order-success",
+      params: { orderId: order.id },
+    });
+  };
+
+  // Xác nhận sau khi khách hàng đã quét VietQR / chuyển tiền thành công
+  const handleConfirmQRPaid = () => {
+    setShowQRModal(false);
+    const order = placeOrder({
+      id: pendingOrderId,
+      customerName: name,
+      phone,
+      address,
+      email: user?.email || "guest@example.com",
+      note,
+      paymentMethod,
+      shippingMethod,
+      total: finalTotal,
+      status: "Đang xử lý", // Đã thanh toán trực tuyến -> chuyển sang Đang xử lý
     });
 
     router.replace({
@@ -307,6 +344,16 @@ export default function CheckoutScreen() {
           <Ionicons name="checkmark-circle" size={20} color="#0b1f33" />
         </Pressable>
       </ScrollView>
+
+      {/* Modal Thanh toán thật qua VietQR / Ngân hàng ACB */}
+      <PaymentQRModal
+        visible={showQRModal}
+        orderId={pendingOrderId}
+        amount={finalTotal}
+        paymentMethod={paymentMethod === "momo" ? "momo" : "bank"}
+        onSuccess={handleConfirmQRPaid}
+        onClose={() => setShowQRModal(false)}
+      />
     </KeyboardAvoidingView>
   );
 }

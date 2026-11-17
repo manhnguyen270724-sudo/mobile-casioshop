@@ -1,3 +1,5 @@
+// Màn hình giỏ hàng: xem danh sách, cập nhật số lượng, xóa sản phẩm, áp mã giảm giá
+
 import BottomNav from "@/components/bottom-nav";
 import Header from "@/components/Header";
 import { CasioColors } from "@/constants/theme";

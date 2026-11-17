@@ -1,3 +1,5 @@
+// Màn hình chi tiết sản phẩm: ảnh lớn, giá, thông số kỹ thuật, nút thêm giỏ hàng
+
 import Header from "@/components/Header";
 import { CasioColors } from "@/constants/theme";
 import { useStore } from "@/context/StoreContext";

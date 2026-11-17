@@ -1,3 +1,5 @@
+// Form đăng ký thành viên mới: validate họ tên, SĐT, email, mật khẩu rồi lưu vào SQLite
+
 import { useToast } from "@/components/common/Toast";
 import LoadingDots from "@/components/loading-dots";
 import { CasioColors } from "@/constants/theme";

@@ -1,3 +1,5 @@
+// Banner quảng cáo tự động trượt (auto-scroll) cho trang chủ
+
 import { CasioColors } from "@/constants/theme";
 import { Ionicons } from "@expo/vector-icons";
 import { router } from "expo-router";

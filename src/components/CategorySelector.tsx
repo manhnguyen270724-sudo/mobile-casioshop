@@ -1,3 +1,5 @@
+// Thanh cuộn chip danh mục ngang cho phép lọc sản phẩm theo hãng
+
 import { CasioColors } from "@/constants/theme";
 import { Ionicons } from "@expo/vector-icons";
 import React from "react";

@@ -1,3 +1,5 @@
+// Thẻ sản phẩm dạng lưới/ngang, click để mở trang chi tiết
+
 import { CasioColors } from "@/constants/theme";
 import { useStore } from "@/context/StoreContext";
 import { formatPrice, parsePrice } from "@/database/products";

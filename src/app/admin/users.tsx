@@ -1,3 +1,5 @@
+// Màn hình quản trị user: xem danh sách tài khoản, cập nhật vai trò, xóa user khỏi CSDL
+
 import BottomNav from "@/components/bottom-nav";
 import Header from "@/components/Header";
 import { CasioColors } from "@/constants/theme";
@@ -31,6 +33,7 @@ export default function AdminUsersScreen() {
     );
   }, [users, searchQuery]);
 
+  // Cập nhật vai trò (admin <-> user)
   const handleChangeRole = (username: string, currentRole: UserRole) => {
     const targetRole: UserRole = currentRole === "admin" ? "user" : "admin";
     Alert.alert(
@@ -49,6 +52,7 @@ export default function AdminUsersScreen() {
     );
   };
 
+  // Xóa user khỏi hệ thống (chặn xóa chính mình)
   const handleDeleteUser = (username: string) => {
     if (currentUser?.username.toLowerCase() === username.toLowerCase()) {
       Alert.alert("Lỗi", "Bạn không thể tự xóa tài khoản quản trị của chính mình!");

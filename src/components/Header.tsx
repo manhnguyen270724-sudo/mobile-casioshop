@@ -1,3 +1,5 @@
+// Header chung: hiển thị logo, tiêu đề, huy hiệu vai trò, tên user đăng nhập và nút đăng xuất
+
 import { useToast } from "@/components/common/Toast";
 import { CasioColors } from "@/constants/theme";
 import { useStore } from "@/context/StoreContext";
@@ -98,7 +100,7 @@ export default function Header({
         </View>
       </View>
 
-      {/* User Info & Logout Strip */}
+      {/* Thanh hiển thị vai trò, tên người dùng & nút Đăng xuất */}
       <View style={styles.userStatusStrip}>
         {user ? (
           <View style={styles.userLoggedRow}>

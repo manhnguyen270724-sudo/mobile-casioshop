@@ -1,3 +1,6 @@
+// Màn hình quản trị loại sản phẩm: xem danh sách, thêm, sửa, xóa loại SP
+// và thêm sản phẩm mới cho từng loại tương ứng
+
 import BottomNav from "@/components/bottom-nav";
 import Header from "@/components/Header";
 import { CasioColors } from "@/constants/theme";
@@ -43,7 +46,7 @@ export default function AdminCategoriesScreen() {
   const [prodImg, setProdImg] = useState("");
   const [prodDesc, setProdDesc] = useState("");
 
-  // Handler: Add Category
+  // Lưu loại sản phẩm mới hoặc cập nhật tên loại đã chọn
   const handleSaveCategory = () => {
     const trimmed = newCatName.trim();
     if (!trimmed) {
@@ -60,7 +63,7 @@ export default function AdminCategoriesScreen() {
     Alert.alert("Thành công", `Đã thêm loại sản phẩm "${trimmed}"!`);
   };
 
-  // Handler: Edit Category
+  // Sửa tên loại sản phẩm
   const handleOpenEditCat = (catName: string) => {
     setEditingOldCat(catName);
     setEditingNewCat(catName);
@@ -78,7 +81,7 @@ export default function AdminCategoriesScreen() {
     Alert.alert("Thành công", `Đã cập nhật loại sản phẩm thành "${trimmed}"!`);
   };
 
-  // Handler: Delete Category
+  // Xóa loại sản phẩm kèm kiểm tra số lượng SP thuộc loại đó
   const handleDeleteCategory = (catName: string) => {
     const count = products.filter((p) => p.brand === catName).length;
     Alert.alert(
@@ -98,7 +101,7 @@ export default function AdminCategoriesScreen() {
     );
   };
 
-  // Handler: Add Product for Specific Category (Requirement 16)
+  // Mở modal thêm sản phẩm mới cho loại đã chọn
   const handleOpenAddProdForCat = (catName: string) => {
     setTargetCategory(catName);
     setProdName("");

@@ -1,3 +1,5 @@
+// Thanh điều hướng dưới cùng (Bottom Tab) - tự động thay đổi số nút theo vai trò user/admin
+
 import { CasioColors } from "@/constants/theme";
 import { useStore } from "@/context/StoreContext";
 import { Ionicons } from "@expo/vector-icons";
@@ -42,7 +44,7 @@ export default function BottomNav() {
     return pathname.startsWith(route);
   };
 
-  // Requirement 14: Admin Bottom Tab gồm: Home của user, Home của admin, Signup, Login
+  // Tab điều hướng khi đăng nhập bằng tài khoản Admin (4 nút)
   const adminTabs: TabItem[] = [
     {
       route: "/",
@@ -70,7 +72,7 @@ export default function BottomNav() {
     },
   ];
 
-  // Requirement 5: Bottom Tab ở trang chủ gồm 3 nút: Home, Sign up, Login
+  // Tab điều hướng cho khách / user thường (3 nút)
   const userTabs: TabItem[] = [
     {
       route: "/",

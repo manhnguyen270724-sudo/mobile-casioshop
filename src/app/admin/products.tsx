@@ -1,3 +1,6 @@
+// Màn hình quản trị sản phẩm: xem danh sách, thêm mới, sửa thông tin, xóa sản phẩm
+// Dữ liệu được lưu trữ và truy vấn trực tiếp từ SQLite
+
 import BottomNav from "@/components/bottom-nav";
 import Header from "@/components/Header";
 import { CasioColors } from "@/constants/theme";
@@ -71,7 +74,7 @@ export default function AdminProductsScreen() {
     setIsAddModalVisible(true);
   };
 
-  // Submit Add
+  // Thêm sản phẩm mới vào cơ sở dữ liệu SQLite
   const handleSaveAdd = () => {
     if (!addName.trim()) {
       Alert.alert("Lỗi", "Vui lòng nhập tên sản phẩm");
@@ -96,7 +99,7 @@ export default function AdminProductsScreen() {
     Alert.alert("Thành công", `Đã thêm sản phẩm "${addName}" vào hệ thống!`);
   };
 
-  // Open Edit Modal
+  // Chỉnh sửa thông tin sản phẩm
   const handleOpenEdit = (p: Product) => {
     setEditingId(p.id);
     setEditName(p.name);
@@ -107,7 +110,6 @@ export default function AdminProductsScreen() {
     setIsEditModalVisible(true);
   };
 
-  // Submit Edit
   const handleSaveEdit = () => {
     if (!editName.trim()) {
       Alert.alert("Lỗi", "Tên sản phẩm không được để trống");
@@ -127,7 +129,7 @@ export default function AdminProductsScreen() {
     Alert.alert("Thành công", `Đã cập nhật sản phẩm "${editName}"!`);
   };
 
-  // Delete Product
+  // Xóa sản phẩm khỏi cơ sở dữ liệu
   const handleDelete = (p: Product) => {
     Alert.alert(
       "Xác nhận xóa sản phẩm",

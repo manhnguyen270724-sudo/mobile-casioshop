@@ -1,3 +1,5 @@
+// Form đăng nhập: xác thực tài khoản với SQLite, điều hướng theo vai trò (user -> /, admin -> /admin)
+
 import { useToast } from "@/components/common/Toast";
 import LoadingDots from "@/components/loading-dots";
 import { CasioColors } from "@/constants/theme";
@@ -56,9 +58,11 @@ export default function LoginForm({
         "success"
       );
 
+      // Admin -> chuyển đến trang quản trị
       if (loggedUser.role === "admin") {
         router.replace("/admin" as Href);
       } else {
+        // User thường -> chuyển về trang chủ mua sắm
         router.replace("/");
       }
     } catch (err: any) {
@@ -243,15 +247,18 @@ const styles = StyleSheet.create({
     marginBottom: 18,
     borderWidth: 1.5,
     borderColor: "#cbd5e1",
+    alignItems: "center",
   },
   quickFillLabel: {
     color: "#475569",
     fontSize: 12.5,
     fontWeight: "700",
     marginBottom: 8,
+    textAlign: "center",
   },
   chipRow: {
     flexDirection: "row",
+    justifyContent: "center",
     gap: 8,
   },
   chipAdmin: {

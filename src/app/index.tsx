@@ -29,6 +29,7 @@ const PRICE_RANGES: { id: PriceRange; label: string }[] = [
   { id: "over_10m", label: "> 10 Triệu" },
 ];
 
+// Màn hình trang chủ - hiển thị sản phẩm, tìm kiếm, lọc danh mục và khoảng giá
 export default function HomeScreen() {
   const { products, categories, user } = useStore();
   const [selectedCategory, setSelectedCategory] = useState<string>("Tất cả");
@@ -36,22 +37,22 @@ export default function HomeScreen() {
   const [priceRange, setPriceRange] = useState<PriceRange>("all");
   const [activeMenu, setActiveMenu] = useState<"home" | "shop">("home");
 
-  // Filtering products by: Category, Search query (Name or Brand), Price Range
+  // Lọc sản phẩm theo 3 tiêu chí: danh mục, từ khóa tìm kiếm và khoảng giá
   const filteredProducts = useMemo(() => {
     return products.filter((product) => {
-      // 1. Category Filter
+      // Lọc theo danh mục (brand)
       const matchCategory =
         selectedCategory === "Tất cả" ||
         product.brand.toLowerCase() === selectedCategory.toLowerCase();
 
-      // 2. Search Filter (by Name or Category/Brand)
+      // Tìm kiếm theo tên sản phẩm hoặc tên hãng
       const query = searchQuery.trim().toLowerCase();
       const matchSearch =
         !query ||
         product.name.toLowerCase().includes(query) ||
         product.brand.toLowerCase().includes(query);
 
-      // 3. Price Range Filter
+      // Lọc theo khoảng giá đã chọn
       const price = parsePrice(product.price);
       let matchPrice = true;
       if (priceRange === "under_3m") {
@@ -74,10 +75,10 @@ export default function HomeScreen() {
 
   return (
     <View style={styles.screen}>
-      {/* Requirement 8: Header hiển thị thông tin user & đăng xuất */}
+      {/* Header: logo, tiêu đề, giỏ hàng, thông tin đăng nhập */}
       <Header title="CASIO STORE" showCart={true} />
 
-      {/* Requirement 2: Menu điều hướng gồm Home & Danh mục sản phẩm */}
+      {/* Thanh menu điều hướng: Home và Danh mục sản phẩm */}
       <View style={styles.navigationMenuBar}>
         <Pressable
           onPress={() => {
@@ -134,10 +135,10 @@ export default function HomeScreen() {
         showsVerticalScrollIndicator={false}
         contentContainerStyle={styles.content}
       >
-        {/* Requirement 2: Banner Slider */}
+        {/* Banner quảng cáo tự động trượt */}
         <BannerSlider />
 
-        {/* Requirement 9: Tìm kiếm theo tên / danh mục */}
+        {/* Ô tìm kiếm sản phẩm theo tên hoặc hãng */}
         <View style={styles.searchSection}>
           <View style={styles.searchBox}>
             <Ionicons name="search-outline" size={19} color="#8a96a3" />
@@ -156,7 +157,7 @@ export default function HomeScreen() {
           </View>
         </View>
 
-        {/* Requirement 3: Xem sản phẩm theo từng danh mục (CategorySelector.tsx) */}
+        {/* Thanh chip chọn danh mục: Tất cả, G-Shock, Citizen, Seiko... */}
         <CategorySelector
           categories={categories}
           selectedCategory={selectedCategory}
@@ -164,7 +165,7 @@ export default function HomeScreen() {
           title="CHỌN DANH MỤC ĐỒNG HỒ"
         />
 
-        {/* Requirement 10: Lọc sản phẩm theo khoảng giá */}
+        {/* Bộ lọc khoảng giá: Tất cả, < 3tr, 3-6tr, 6-10tr, > 10tr */}
         <View style={styles.priceFilterSection}>
           <View style={styles.priceFilterHeader}>
             <Ionicons name="funnel-outline" size={14} color={CasioColors.accent} />
@@ -214,7 +215,7 @@ export default function HomeScreen() {
           <Ionicons name="chevron-forward" size={18} color={CasioColors.accent} />
         </Pressable>
 
-        {/* Requirement 1: Trang chủ gồm các sản phẩm có sẵn khi khởi tạo DB */}
+        {/* Danh sách sản phẩm chính hãng từ cơ sở dữ liệu */}
         <View style={styles.headingRow}>
           <View>
             <Text style={styles.sectionTitle}>

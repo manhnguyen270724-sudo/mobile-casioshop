@@ -1,3 +1,6 @@
+// Trang chủ quản trị: hiển thị thống kê tổng quan (Users, Danh mục, Sản phẩm, Đơn hàng)
+// và các nút điều hướng đến màn hình quản lý user, loại sản phẩm, sản phẩm, đơn hàng
+
 import BottomNav from "@/components/bottom-nav";
 import Header from "@/components/Header";
 import { CasioColors } from "@/constants/theme";
@@ -73,11 +76,11 @@ export default function AdminDashboardScreen() {
           </View>
         </View>
 
-        {/* Requirement 13: Các nút chức năng Quản lý user, Quản lý loại SP, Quản lý sản phẩm + Đơn hàng */}
+        {/* Danh sách các nút chức năng quản trị hệ thống */}
         <Text style={styles.sectionHeader}>DANH MỤC QUẢN TRỊ HỆ THỐNG</Text>
 
         <View style={styles.menuList}>
-          {/* 1. Quản lý User */}
+          {/* Nút quản lý user */}
           <Pressable
             onPress={() => router.push("/admin/users" as Href)}
             style={({ pressed }) => [styles.menuCard, pressed && styles.pressed]}
@@ -94,7 +97,7 @@ export default function AdminDashboardScreen() {
             <Ionicons name="chevron-forward" size={20} color="#8a96a3" />
           </Pressable>
 
-          {/* 2. Quản lý Loại sản phẩm */}
+          {/* Nút quản lý loại sản phẩm */}
           <Pressable
             onPress={() => router.push("/admin/categories" as Href)}
             style={({ pressed }) => [styles.menuCard, pressed && styles.pressed]}
@@ -111,7 +114,7 @@ export default function AdminDashboardScreen() {
             <Ionicons name="chevron-forward" size={20} color="#8a96a3" />
           </Pressable>
 
-          {/* 3. Quản lý Sản phẩm */}
+          {/* Nút quản lý sản phẩm */}
           <Pressable
             onPress={() => router.push("/admin/products" as Href)}
             style={({ pressed }) => [styles.menuCard, pressed && styles.pressed]}
@@ -128,7 +131,7 @@ export default function AdminDashboardScreen() {
             <Ionicons name="chevron-forward" size={20} color="#8a96a3" />
           </Pressable>
 
-          {/* 4. Quản lý Đơn hàng (Requirement 19) */}
+          {/* Nút quản trị đơn hàng */}
           <Pressable
             onPress={() => router.push("/admin/orders" as Href)}
             style={({ pressed }) => [styles.menuCard, pressed && styles.pressed]}
