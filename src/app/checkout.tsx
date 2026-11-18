@@ -1,7 +1,8 @@
-// Màn hình thanh toán & đặt hàng: thông tin nhận hàng, phương thức vận chuyển, thanh toán VietQR/MoMo/COD
+// Màn hình thanh toán & đặt hàng: thông tin nhận hàng, vận chuyển, VietQR/VNPAY/MoMo/COD
 
 import Header from "@/components/Header";
 import PaymentQRModal from "@/components/PaymentQRModal";
+import VNPAYModal from "@/components/VNPAYModal";
 import { CasioColors } from "@/constants/theme";
 import { useStore } from "@/context/StoreContext";
 import { formatPrice } from "@/database/products";
@@ -30,9 +31,10 @@ export default function CheckoutScreen() {
     user?.address || "123 Lê Lợi, Phường Bến Nghé, Quận 1, TP. Hồ Chí Minh"
   );
   const [note, setNote] = useState("");
-  const [paymentMethod, setPaymentMethod] = useState<"cod" | "bank" | "momo">("cod");
+  const [paymentMethod, setPaymentMethod] = useState<"cod" | "bank" | "vnpay" | "momo">("cod");
   const [shippingMethod, setShippingMethod] = useState<"standard" | "express">("standard");
   const [showQRModal, setShowQRModal] = useState(false);
+  const [showVNPAYModal, setShowVNPAYModal] = useState(false);
   const [pendingOrderId, setPendingOrderId] = useState("");
 
   const actualShippingFee =
@@ -53,9 +55,17 @@ export default function CheckoutScreen() {
       return;
     }
 
-    // Nếu chọn thanh toán chuyển khoản ngân hàng hoặc ví MoMo -> Kích hoạt VietQR thật
+    const generatedId = `CASIO-${Math.floor(100000 + Math.random() * 900000)}`;
+
+    // Nếu chọn Cổng thanh toán VNPAY -> Mở giao diện Cổng VNPAY (Thẻ ATM, OTP)
+    if (paymentMethod === "vnpay") {
+      setPendingOrderId(generatedId);
+      setShowVNPAYModal(true);
+      return;
+    }
+
+    // Nếu chọn Chuyển khoản VietQR ACB hoặc MoMo -> Mở Popup VietQR Napas 247
     if (paymentMethod === "bank" || paymentMethod === "momo") {
-      const generatedId = `CASIO-${Math.floor(100000 + Math.random() * 900000)}`;
       setPendingOrderId(generatedId);
       setShowQRModal(true);
       return;
@@ -94,6 +104,28 @@ export default function CheckoutScreen() {
       shippingMethod,
       total: finalTotal,
       status: "Đang xử lý", // Đã thanh toán trực tuyến -> chuyển sang Đang xử lý
+    });
+
+    router.replace({
+      pathname: "/order-success",
+      params: { orderId: order.id },
+    });
+  };
+
+  // Xác nhận sau khi thanh toán thành công qua Cổng VNPAY
+  const handleConfirmVNPAYPaid = () => {
+    setShowVNPAYModal(false);
+    const order = placeOrder({
+      id: pendingOrderId,
+      customerName: name,
+      phone,
+      address,
+      email: user?.email || "guest@example.com",
+      note,
+      paymentMethod: "vnpay",
+      shippingMethod,
+      total: finalTotal,
+      status: "Đang xử lý", // Đã thanh toán VNPAY thành công
     });
 
     router.replace({
@@ -292,6 +324,28 @@ export default function CheckoutScreen() {
           </Pressable>
 
           <Pressable
+            onPress={() => setPaymentMethod("vnpay")}
+            style={[
+              styles.optionItem,
+              paymentMethod === "vnpay" && styles.optionSelected,
+            ]}
+          >
+            <View style={styles.radio}>
+              {paymentMethod === "vnpay" && <View style={styles.radioDot} />}
+            </View>
+            <View style={styles.optionInfo}>
+              <View style={{ flexDirection: "row", alignItems: "center", gap: 6 }}>
+                <Text style={styles.optionTitle}>Cổng thanh toán VNPAY</Text>
+                <View style={styles.vnpayBadge}>
+                  <Text style={styles.vnpayBadgeText}>HOT</Text>
+                </View>
+              </View>
+              <Text style={styles.optionDesc}>Thẻ ATM nội địa, Internet Banking, OTP</Text>
+            </View>
+            <Ionicons name="card" size={22} color="#005baa" />
+          </Pressable>
+
+          <Pressable
             onPress={() => setPaymentMethod("momo")}
             style={[
               styles.optionItem,
@@ -302,10 +356,10 @@ export default function CheckoutScreen() {
               {paymentMethod === "momo" && <View style={styles.radioDot} />}
             </View>
             <View style={styles.optionInfo}>
-              <Text style={styles.optionTitle}>Ví điện tử MoMo / VNPAY</Text>
+              <Text style={styles.optionTitle}>Ví điện tử MoMo</Text>
               <Text style={styles.optionDesc}>Thanh toán tiện lợi & an toàn</Text>
             </View>
-            <Ionicons name="wallet-outline" size={22} color={CasioColors.primary} />
+            <Ionicons name="wallet-outline" size={22} color="#d82d8b" />
           </Pressable>
         </View>
 
@@ -353,6 +407,15 @@ export default function CheckoutScreen() {
         paymentMethod={paymentMethod === "momo" ? "momo" : "bank"}
         onSuccess={handleConfirmQRPaid}
         onClose={() => setShowQRModal(false)}
+      />
+
+      {/* Modal Cổng thanh toán VNPAY Gateway (Thẻ ATM, OTP) */}
+      <VNPAYModal
+        visible={showVNPAYModal}
+        orderId={pendingOrderId}
+        amount={finalTotal}
+        onSuccess={handleConfirmVNPAYPaid}
+        onClose={() => setShowVNPAYModal(false)}
       />
     </KeyboardAvoidingView>
   );
@@ -503,6 +566,17 @@ const styles = StyleSheet.create({
     fontSize: 13,
     fontWeight: "700",
     color: CasioColors.text,
+  },
+  vnpayBadge: {
+    backgroundColor: "#005baa",
+    paddingHorizontal: 6,
+    paddingVertical: 1,
+    borderRadius: 4,
+  },
+  vnpayBadgeText: {
+    fontSize: 9,
+    fontWeight: "800",
+    color: "#ffffff",
   },
   optionDesc: {
     fontSize: 11,

@@ -142,6 +142,18 @@ export default function AdminOrdersScreen() {
               {item.email && (
                 <Text style={styles.customerEmail}>✉️ {item.email}</Text>
               )}
+              <Text style={styles.paymentMethodText}>
+                💳 Thanh toán:{" "}
+                <Text style={{ fontWeight: "700", color: CasioColors.primary }}>
+                  {item.paymentMethod === "vnpay"
+                    ? "Cổng VNPAY (Thẻ ATM/OTP)"
+                    : item.paymentMethod === "bank"
+                      ? "VietQR Napas 247 (ACB)"
+                      : item.paymentMethod === "momo"
+                        ? "Ví MoMo"
+                        : "Thanh toán khi nhận hàng (COD)"}
+                </Text>
+              </Text>
             </View>
 
             {/* Items Summary */}
@@ -387,6 +399,14 @@ const styles = StyleSheet.create({
     color: "#475569",
     fontSize: 13,
     marginTop: 2,
+  },
+  paymentMethodText: {
+    color: "#475569",
+    fontSize: 12.5,
+    marginTop: 6,
+    paddingTop: 6,
+    borderTopWidth: 1,
+    borderTopColor: "#edf2f7",
   },
   itemsBox: {
     marginBottom: 10,

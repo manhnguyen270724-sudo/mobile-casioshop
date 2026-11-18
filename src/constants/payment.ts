@@ -4,7 +4,7 @@ export const BANK_CONFIG = {
   bankName: "Ngân hàng Á Châu (ACB)",
   accountNumber: "35582187",
   accountName: "NGUYEN MANH",
-  template: "compact2", // Giao diện QR chuẩn Napas 247 & VietQR
+  template: "compact2",
 };
 
 /**

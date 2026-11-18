@@ -73,8 +73,10 @@ export default function OrderSuccessScreen() {
               {lastOrder?.paymentMethod === "cod"
                 ? "Thanh toán khi nhận hàng (COD)"
                 : lastOrder?.paymentMethod === "bank"
-                  ? "Chuyển khoản Ngân hàng"
-                  : "Ví MoMo/VNPAY"}
+                  ? "Chuyển khoản VietQR (ACB)"
+                  : lastOrder?.paymentMethod === "vnpay"
+                    ? "Cổng thanh toán VNPAY (Thẻ ATM/OTP)"
+                    : "Ví điện tử MoMo"}
             </Text>
           </View>
 
